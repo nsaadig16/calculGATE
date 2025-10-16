@@ -1,7 +1,20 @@
 ---
-title: "calculGATE"
+title: "Cálculo GATE"
+listing:
+    sort-ui: false
+    filter-ui: false
+    type: table
+    date-format: "YYYY-MM-DD"
+    contents: "contents"
+    field-display-names:
+        title: "Tema"
+        date: "Fecha"
+        author: "Autor"
+    table-hover: true
+    table-striped: true
+
 ---
 
-This is a Quarto website.
+Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Tenemos las siguientes páginas:

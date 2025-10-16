@@ -1,0 +1,285 @@
+---
+title: "Análisis de funciones"
+date: "2025-10-16"
+date-format: "YYYY-MM-DD"
+number-sections: true
+author:
+    - name: "Naïm Saadi"
+      email: "nsaadig16@gmail.com"
+---
+
+## Pre: Funciones a trozos {.unnumbered #sec-separadores}
+Una **función a trozos** es una función que se define de forma diferente en diferentes intervalos.
+Una función a trozos $f(x)$ puede ser representada de la siguiente manera:
+
+$$
+f(x)=\begin{cases}
+f_1(x)&\text{si } x<a_1\\\\
+f_2(x) &\text{si } a_1 \leq x<a_2\\\\
+f_3(x)&\text{si }a_2\leq x
+\end{cases}
+$$
+
+No todas son así, pero más o menos tienen este aspecto. 
+
+Durante el resto del documento, se referirá a los valores $a_1$ y $a_2$, que indican los diferentes intervalos de una función a trozos como **separadores**.
+
+
+## Dominio {#sec-dominio}
+El dominio de una función es un intervalo que indica que valores puede tomar la $x$.
+Dada una función $f(x)$, podemos asumir que su dominio será siempre todos los reales.
+$$\large\text{Dom}(f(x))=\mathbb R$$
+
+En cambio, si tienen alguno de los siguientes elementos, esto varía.
+
+### Función con variable en el denominador
+
+Como no se puede dividir entre 0, debemos tener en cuenta que el denominador de nuestras funciones no puede ser igual a 0.
+$$\text{si  } f(x)=\frac{a}{bx}\Longrightarrow \text{Dom}(f(x))=\mathbb{R}-\{x~~\text{tal que }bx=0\}$$
+
+Entonces, simplemente hay que igualar el denominador de la función a 0, y los valores resultantes serán aquellos puntos que **no** están en el dominio.
+
+#### Indeterminación
+
+Es posible que en ese punto, si intentamos comprobar la [continuidad](#sec-continuidad), uno de los límites nos dé como resultado
+$\large\frac 0 0$. Al tratarse esto de una indeterminación, no sabemos si la función es contínua o no. Para saberlo, podemos centrarnos
+en comprobar si la función es [derivable](#sec-derivabilidad) en ese punto, ya que en caso de serlo, esto implicaría que es
+contínua. Una forma de hacer esto directamente con la fracción es aplicar [l'Hôpital](#sec-lhopital) en la fracción y entonces 
+hacer el límite.
+
+### Función que contiene una raíz
+
+Como que no existen las raíces de números negativos, el valor de dentro de la raíz deberá ser mayor o igual a 0. Para eso, deberemos resolver una [inecuación](#sec-inecuaciones).
+$$\text{si  } f(x)=\sqrt{ax}\Longrightarrow \text{Dom}(f(x))=(\text{interval tal que  }ax  \geq 0)$$
+
+### Función que contiene un logaritmo
+
+Es el mismo caso que en [[#Función que contiene una raíz |la raíz]] , con la diferencia de que no existe  el logaritmo de 0. Por lo tanto: $$\text{si  } f(x)=\log{(ax)}\Longrightarrow \text{Dom}(f(x))=(\text{interval tal que  }ax  > 0)$$
+
+::: {.callout-warning }
+Recordad que cada una de las funciones de las funciones a trozos está definida para un rango diferente indicado por los [separadores](#sec-separadores). Si los valores "problemáticos" se encuentran fuera del rango, los ignoramos.
+:::
+
+## Recorrido
+Si el dominio són aquellas $x$ que acepta nuestra función, el **recorrido** son aquellas $y$ que nos puede devolver. Excepto las siguientes funciones, el recorrido en general suele ser $\mathbb R$.
+
+### Recorrido fijo
+
+#### Función raíz
+En las funciones de la forma $\sqrt x$, el recorrido será $[0,+\infty)$.
+
+#### Función logaritmo
+En las funciones de la forma $\log (x)$, el recorrido será $(0,+\infty)$.
+
+#### Funciones trigonométricas
+En las funciones de las formas $\sin(x)$ o $\cos(x)$, el recorrido será $[-1,+1]$.
+
+### Recorrido variable
+
+#### Función cuadrática
+En las funciones de la forma $ax^2+bx+c$, el recorrido depende de cual sea el [extremo relativo](#sec-extremos) de esta función. Si $a>0$, entonces el recorrido irá de $[y_{min},+\infty)$, por lo contrario, el recorrido irá de $(-\infty,y_{max}]$.
+
+#### Funciones racionales
+En las funciones de la forma $\large \frac{1}{x}$, tenemos que aislar el valor $x$ de la función.
+Por ejemplo:
+$$\begin{gathered}
+y=\frac{2x}{9x-2}\\\\
+y\cdot(9x-2)=2x\\\\
+9xy-2y=2x\\\\
+9xy-2x=2y\\\\
+x\cdot(9y-2)=2y\\\\
+x=\frac{2y}{9y-2}
+\end{gathered}$$
+Dado esto, ahora simplemente vemos cuáles $y$ nunca podrían estar. Como que el denominador no puede dar 0, buscamos que $y$ no pueden ser parte de la función.
+$$\begin{gathered}
+9y-2=0\\\\
+9y=2\\\\
+y=\frac 2 9
+\end{gathered}
+$$
+
+Por lo tanto, como no puede ser que $y=\frac 2 9$, el recorrido será $\mathbb{R} - \{\frac 2 9\}$.
+
+## Continuidad {#sec-continuidad}
+En general, para saber si una función es contínua, deberíamos observar:
+
+- Los puntos que están fuera del dominio.
+- Los [separadores](#sec-separadores).
+Una vez tengamos la lista de puntos, sabremos que:
+
+:::{.callout-tip}
+Una función $f(x)$ es continua en un punto $a$ solo si:
+$$\large\lim_{x\rightarrow a^-} f(x) = \lim_{x\rightarrow a^+} f(x)=f(a)$$
+:::
+
+### Tipos de saltos
+Al hacer los [límites](#sec-limites) laterales de una función $f(x)$ en un punto $a$, la función puede ser [contínua](#sec-continuidad) o discontínua. Aquí se detallan los diferentes tipos de discontinuidades:
+
+#### Función discontínua evitable
+Una función es **discontínua evitable** si:
+$$\large\lim_{x\rightarrow a^-} =\lim_{x\rightarrow a^+}\neq f(a)$$
+
+Esto puede pasar, por ejemplnumber-sections: true
+o, si uno de los [separadores](#sec-separadores) no está incluido en ningún intervalo.
+
+#### Función discontínua no evitable
+Si  en una función$$\lim_{x\rightarrow a^-} \neq\lim_{x\rightarrow a^+}$$entonces tenemos una discontinuidad **no evitable**. Sea $\alpha$ el resultado del límite por la izquierda y $\beta$ el resultado del límite por la derecha, tenemos los siguientes tipos de saltos:
+
+##### De salto finito
+Se da si $\large\alpha \in \mathbb R$ y $\large\beta \in \mathbb R$
+
+##### De salto infinito
+Se da si $\large\begin{cases}\alpha = \pm \infty\\\beta\in \mathbb R\end{cases}$  o  $\large\begin{cases}\alpha \in\mathbb{R} \\\beta=\pm \infty\end{cases}$
+
+##### De salto asintótico
+Se da si $\large \alpha =\pm\infty$ y $\large \beta = \pm \infty$   
+
+##### De segunda especie
+Esta se da en casos muy concretos, cuando uno de los límites no existe o está indefinido. Por ejemplo, como que la raíz cuadrada solo acepta valores más grandes o igual que 0, si hacemos $$\large \lim_{x\rightarrow 0^-}\sqrt x$$
+veremos que no existe. En este caso diríamos que es una **discontinuidad inevitable de segunda especie**.
+
+## Asíntotas
+Debemos comprobar si una función tiene **asíntotas verticales** u **horizontales**.
+
+### Asíntotas horizontales
+Para comprobar si existen asíntotas horizontales, hay que hacer los límites de $x$ a $\infty$ y $-\infty$.
+Si el resultado:
+- Es $\infty$ o $-\infty$, entonces **no existe** asíntota horizontal
+- Es un número $n$, entonces existe una asíntota horizontal en $y=n$.
+
+### Asíntotas verticales
+Para comprobar si existen asíntotas verticales, hay que hacer los límites de $x$ a los puntos fuera del [dominio](#sec-dominio) y a los [separadores](#sec-separadores).
+Si el resultado de hacer los límites de $x$ a un punto $a$:
+
+- Es un número $n$, entonces **no existe** asíntota vertical.
+- Es $\infty$ o $-\infty$, entonces existe una asíntota vertical en $x=a$. 
+	- Por ambos lados (esta es la que se refiere por defecto).
+	- La asíntota puede ser por la izquierda (si solo da $\pm\infty$ en $x\rightarrow a^-$)
+	- La asíntota puede ser por la derecha   (si solo da $\pm\infty$ en $x\rightarrow a^+$)
+
+## Recta tangente {#sec-tangente}
+Dada una función $\large f(x)$ y un punto $\large a$, podemos definir la **recta tangente** como aquella recta que corta con $f(x)$ una única vez, en el punto $x=a$. Podemos obtener la recta con la siguiente fórmula: $$\large y-f(a)=f'(a)\cdot(x-a)$$
+Donde $a$ es el punto donde intersectan la función $f(x)$ y la recta. 
+
+Es importante denotar que $f'(a)$ es la **pendiente** de la recta.
+
+## Extremos relativos y estudio del crecimiento
+
+### Extremos relativos {#sec-extremos}
+Dada una función, los extremos relativos son los puntos en los que la $y$ alcanza sus valores **máximos** o **mínimos**. Para encontrar en que $x$ hay valores máximos o mínimos hay que ver los puntos en los que la [pendiente](#sec-pendiente) es 0, es decir, cuando:
+$$\large f'(x)=0$$
+Para esto simplemente resolvemos la ecuación y obtendremos en qué $x$ encontramos un **extremo relativo**. Si encontramos un extremo relativo en $a$, podemos saber qué tipo de extremo relativo es:
+
+- Hay un **mínimo** en $x=a$ si $f''(a) > 0$.
+- Hay un **máximo** en $x=a$ si $f''(a)<0$.
+Si nos pidiera encontrar la coordenada donde está ese máximo, la $x$ sería $a$ y la $y$ sería $f(a)$.
+
+### Estudio del crecimiento
+
+Para el estudio del crecimiento de una función, primero tendremos que haber encontrado sus [extremos](#sec-extremos) y haber analizado el [dominio](#sec-dominio).
+Cuando los tengamos, tenemos que separar la recta numérica usando:
+
+- Los extremos relativos.
+- Los puntos que no están en el [[#Dominio|dominio]].
+- Los [separadores](#sec-separadores)
+
+Digamos que tenemos los puntos $a$, $b$ y $c$, siendo $a<b<c$. Entonces, separamos la recta numérica en los intervalos $(-\infty,a),(a,b),(b,c),(c,+\infty)$. Una vez separada, elegiremos un número cualquiera de cada intervalo. Imaginemos que elegimos $\alpha\in(-\infty,a)$, $\beta\in (a,b)$, $\gamma\in (b,c)$, $\delta\in (c,+\infty)$.
+Para saber si la función crece o decrece en ese intervalo tenemos que tomar ese valor y sustituirlo en la derivada ($f'(\alpha),f'(\beta),f'(\gamma),f'(\delta)$), ya que así conseguiremos la [pendiente](#sec-pendiente) (que es lo que nos indica si crece o decrece).
+Podemos decir que la función **crece** en un intervalo si la pendiente de un punto del intervalo es **positiva**. Si en cambio, es **negativa**, entonces **decrece**.
+*Ejemplo:*
+$$
+\begin{gathered}
+\text{puntos separadores: }-2,4\\
+\text{intervalos: }(-\infty,-2),(-2,4),(4,+\infty)\\
+\text{puntos cualquiera de cada intervalo:}-5,0,10\\
+\text{imaginemos que: }f'(-5)=3,f'(0)=-2,f'(10)=4\\
+\text{entonces:}
+\end{gathered}
+$$
+
+|                   | $(-\infty,-2)$ | $(-2,4)$   | $(4,+\infty)$ |
+| ----------------- | -------------- | ---------- | ------------- |
+| **signo** $f'(x)$ | $+$            | $-$        | $+$           |
+| **forma** $f(x)$  | $\nearrow$     | $\searrow$ | $\nearrow$    |
+Entonces podemos decir que $f(x)$ es **creciente** en $(-\infty,-2)\cup(4,+\infty)$ y **decreciente** en $(-2,4)$. 
+
+## Derivabilidad {#sec-derivabilidad}
+Para que una función sea derivable, tiene que ser [contínua](#sec-continuidad). Es decir, una función derivable  **siempre** será contínua pero una contínua **no siempre** será derivable.
+
+Para comprobar que una función $f(x)$ es derivable en un punto $a$ debemos comprobar que la derivada a izquierda y derecha de $a$ es la misma, es decir:
+$$f'_-(a)=f'_+(a)$$
+
+Si son iguales, significa que $f(a)$ es derivable en $a$.
+
+*Ejemplo:*
+$$
+f(x)=\begin{cases}
+	x^2&\text{si }x\leq1\\
+	2x-1 &\text{si }1<x 
+\end{cases}\\\\
+$$
+
+*Es contínua, por lo tanto puede ser derivable.*
+*Estudiamos su derivabilidad en $x=1$:*
+$$\begin{gathered}
+f'_-(1)=(x^2)'=2x=2\cdot(1)=2\\\\
+f'_+(1)=(2x-1)'=2
+\end{gathered}
+$$
+
+*Por lo tanto, **sí** es derivable*.
+
+---
+### Extra 1: Resolver inecuaciones {.unnumbered}
+El proceso de resolver inecuaciones es relativamente sencillo. Todo depende de qué tipo queramos resolver. Aquí se explicaran aquellas que os seran útiles.
+
+##### Inecuaciones de primer grado {.unnumbered}
+Son inecuaciones de la forma  $ax+b\geq 0$. Se resuelven de la misma manera que las ecuaciones de primer grado, con la excepción de que **si multiplicamos o dividimos por un número negativo**, hay que girar el signo. *Ejemplo*:
+$$\begin{gathered}-3x+4\geq0
+\\ -3x \geq-4
+\\ x\textcolor{red}{\leq}\frac{-4}{-3}
+\\ x \leq \frac 4 3
+\\\text{Respuesta: } (-\infty,\frac 4 3)
+\end{gathered}
+$$
+
+##### Inecuaciones de segundo grado {.unnumbered #sec-inecuaciones}
+Son inecuaciones de la forma $ax^2 + bx +c \geq 0$. Primero calcularemos las raíces, es decir, lo resolveremos como si fuera una ecuación de segundo grado normal. Eso nos dará 2 respuestas $x_1$ y $x_2$. Para saber qué intervalo tomar, solo tenemos que mirar $a$. Si $a > 0$, entonces el resultado será positivo solo fuera del intervalo $[x_1,x_2]$, pero si $a<0$, entonces el resultado solo será positivo dentro del intervalo $[x_1,x_2]$. En resumen, dada una $f(x)$ que contiene una raíz por ejemplo:
+$$\begin{gather}
+\text{Dom}(f(x))=
+\begin{cases}
+(-\infty,x_1)\cup(x_2,+\infty)&\text{si } a>0
+\\ [x_1,x_2] & \text{si } a<0
+\end{cases}
+\end{gather}
+$$
+
+### Extra 2: Límites {.unnumbered #sec-limites}
+Para trabajar con límites, debemos tener en cuenta lo siguiente (no es algo exacto, ya que lo tomamos como referencia al trabajar con límites).
+Dados números $n,m\in\mathbb{R}$:
+
+- $\large\infty + n = \infty$
+- $\large \infty^n + \infty^m = \infty^{max(n,m)}$
+- $n < \log \infty < \sqrt \infty < \infty < \infty^n < n^{\infty}$
+- $\large\frac 1 \infty = 0$
+- $\large \frac 1 0 = \infty$
+- En fracciones con infinitos: 
+$$\frac{n\cdot \infty_1}{m\cdot\infty_2}=\begin{cases}
+\infty & \text{si }\infty_1>\infty_2\\
+0&\text{si }\infty_2>\infty_1\\
+\frac n m & \text{si }\infty_1 = \infty_2
+\end{cases}
+$$
+
+### Extra 3: L'Hôpital {.unnumbered #sec-lhopital}
+Si al hacer un límite nos surge la indeterminación $\large\frac 0 0$, podemos aplicar la **regla de l'Hôpital**. Para aplicarla, hay que hacer la derivada del numerador y el denominador por separado:
+$$\large \lim_{x\rightarrow a}\frac{f}{g}=\lim_{x\rightarrow a}\frac{f'}{g'}$$
+
+*Ejemplo:*
+$$
+\begin{gathered}\large
+\lim_{x\rightarrow-2}\frac{x+2}{x^2+3x+2}=\frac{-2+2}{(-2)^2+3\cdot(-2)+2}=\frac 0 0\\\\\large
+\frac{x+2}{x^2+3x+2}\overset{\text{l'Hôpital}}{\Longrightarrow}\frac{1}{2x+3}\\\\
+\lim_{x\rightarrow-2}\frac{1}{2x+3}=\frac{1}{2\cdot(-2)+3}=\frac{1}{-4+3}=\frac{1}{-1}=-1
+\end{gathered}
+$$

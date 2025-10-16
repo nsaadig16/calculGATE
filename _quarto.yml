@@ -2,18 +2,22 @@ project:
   type: website
 
 website:
-  title: "calculGATE"
+  title: "CálculoGATE"
+  favicon: "/favicon.ico"
+  page-footer:  
+    center: "Esta web pertenece a [Naïm Saadi](https://nsaadig16.github.io) y es de uso **exclusivo** de los alumnos y alumnas de la academia Gauss."
+    border: true
   navbar:
+    logo: "/favicon.ico"
+    pinned: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: contents/analisis.qmd
+        text: Análisis de funciones
 
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - solar
     css: styles.css
     toc: true
 
