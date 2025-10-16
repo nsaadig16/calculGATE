@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Naïm Saadi">
+<meta name="dcterms.date" content="2025-10-16">
+
+<title>Análisis de funciones – CálculoGATE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-82862045ce3fe7a8ccd219cda00daa0e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../favicon.ico" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CálculoGATE</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../contents/analisis.html" aria-current="page"> 
+<span class="menu-text">Análisis de funciones</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-separadores" id="toc-sec-separadores" class="nav-link active" data-scroll-target="#sec-separadores">Pre: Funciones a trozos</a></li>
+  <li><a href="#sec-dominio" id="toc-sec-dominio" class="nav-link" data-scroll-target="#sec-dominio"><span class="header-section-number">1</span> Dominio</a>
+  <ul class="collapse">
+  <li><a href="#función-con-variable-en-el-denominador" id="toc-función-con-variable-en-el-denominador" class="nav-link" data-scroll-target="#función-con-variable-en-el-denominador"><span class="header-section-number">1.1</span> Función con variable en el denominador</a></li>
+  <li><a href="#función-que-contiene-una-raíz" id="toc-función-que-contiene-una-raíz" class="nav-link" data-scroll-target="#función-que-contiene-una-raíz"><span class="header-section-number">1.2</span> Función que contiene una raíz</a></li>
+  <li><a href="#función-que-contiene-un-logaritmo" id="toc-función-que-contiene-un-logaritmo" class="nav-link" data-scroll-target="#función-que-contiene-un-logaritmo"><span class="header-section-number">1.3</span> Función que contiene un logaritmo</a></li>
+  </ul></li>
+  <li><a href="#recorrido" id="toc-recorrido" class="nav-link" data-scroll-target="#recorrido"><span class="header-section-number">2</span> Recorrido</a>
+  <ul class="collapse">
+  <li><a href="#recorrido-fijo" id="toc-recorrido-fijo" class="nav-link" data-scroll-target="#recorrido-fijo"><span class="header-section-number">2.1</span> Recorrido fijo</a></li>
+  <li><a href="#recorrido-variable" id="toc-recorrido-variable" class="nav-link" data-scroll-target="#recorrido-variable"><span class="header-section-number">2.2</span> Recorrido variable</a></li>
+  </ul></li>
+  <li><a href="#sec-continuidad" id="toc-sec-continuidad" class="nav-link" data-scroll-target="#sec-continuidad"><span class="header-section-number">3</span> Continuidad</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-saltos" id="toc-tipos-de-saltos" class="nav-link" data-scroll-target="#tipos-de-saltos"><span class="header-section-number">3.1</span> Tipos de saltos</a></li>
+  </ul></li>
+  <li><a href="#asíntotas" id="toc-asíntotas" class="nav-link" data-scroll-target="#asíntotas"><span class="header-section-number">4</span> Asíntotas</a>
+  <ul class="collapse">
+  <li><a href="#asíntotas-horizontales" id="toc-asíntotas-horizontales" class="nav-link" data-scroll-target="#asíntotas-horizontales"><span class="header-section-number">4.1</span> Asíntotas horizontales</a></li>
+  <li><a href="#asíntotas-verticales" id="toc-asíntotas-verticales" class="nav-link" data-scroll-target="#asíntotas-verticales"><span class="header-section-number">4.2</span> Asíntotas verticales</a></li>
+  </ul></li>
+  <li><a href="#sec-tangente" id="toc-sec-tangente" class="nav-link" data-scroll-target="#sec-tangente"><span class="header-section-number">5</span> Recta tangente</a></li>
+  <li><a href="#extremos-relativos-y-estudio-del-crecimiento" id="toc-extremos-relativos-y-estudio-del-crecimiento" class="nav-link" data-scroll-target="#extremos-relativos-y-estudio-del-crecimiento"><span class="header-section-number">6</span> Extremos relativos y estudio del crecimiento</a>
+  <ul class="collapse">
+  <li><a href="#sec-extremos" id="toc-sec-extremos" class="nav-link" data-scroll-target="#sec-extremos"><span class="header-section-number">6.1</span> Extremos relativos</a></li>
+  <li><a href="#estudio-del-crecimiento" id="toc-estudio-del-crecimiento" class="nav-link" data-scroll-target="#estudio-del-crecimiento"><span class="header-section-number">6.2</span> Estudio del crecimiento</a></li>
+  </ul></li>
+  <li><a href="#sec-derivabilidad" id="toc-sec-derivabilidad" class="nav-link" data-scroll-target="#sec-derivabilidad"><span class="header-section-number">7</span> Derivabilidad</a>
+  <ul class="collapse">
+  <li><a href="#extra-1-resolver-inecuaciones" id="toc-extra-1-resolver-inecuaciones" class="nav-link" data-scroll-target="#extra-1-resolver-inecuaciones">Extra 1: Resolver inecuaciones</a></li>
+  <li><a href="#sec-limites" id="toc-sec-limites" class="nav-link" data-scroll-target="#sec-limites">Extra 2: Límites</a></li>
+  <li><a href="#sec-lhopital" id="toc-sec-lhopital" class="nav-link" data-scroll-target="#sec-lhopital">Extra 3: L’Hôpital</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Análisis de funciones</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Naïm Saadi <a href="mailto:nsaadig16@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-10-16</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-separadores" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-separadores">Pre: Funciones a trozos</h2>
+<p>Una <strong>función a trozos</strong> es una función que se define de forma diferente en diferentes intervalos. Una función a trozos <span class="math inline">\(f(x)\)</span> puede ser representada de la siguiente manera:</p>
+<p><span class="math display">\[
+f(x)=\begin{cases}
+f_1(x)&amp;\text{si } x&lt;a_1\\\\
+f_2(x) &amp;\text{si } a_1 \leq x&lt;a_2\\\\
+f_3(x)&amp;\text{si }a_2\leq x
+\end{cases}
+\]</span></p>
+<p>No todas son así, pero más o menos tienen este aspecto.</p>
+<p>Durante el resto del documento, se referirá a los valores <span class="math inline">\(a_1\)</span> y <span class="math inline">\(a_2\)</span>, que indican los diferentes intervalos de una función a trozos como <strong>separadores</strong>.</p>
+</section>
+<section id="sec-dominio" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sec-dominio"><span class="header-section-number">1</span> Dominio</h2>
+<p>El dominio de una función es un intervalo que indica que valores puede tomar la <span class="math inline">\(x\)</span>. Dada una función <span class="math inline">\(f(x)\)</span>, podemos asumir que su dominio será siempre todos los reales. <span class="math display">\[\large\text{Dom}(f(x))=\mathbb R\]</span></p>
+<p>En cambio, si tienen alguno de los siguientes elementos, esto varía.</p>
+<section id="función-con-variable-en-el-denominador" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="función-con-variable-en-el-denominador"><span class="header-section-number">1.1</span> Función con variable en el denominador</h3>
+<p>Como no se puede dividir entre 0, debemos tener en cuenta que el denominador de nuestras funciones no puede ser igual a 0. <span class="math display">\[\text{si  } f(x)=\frac{a}{bx}\Longrightarrow \text{Dom}(f(x))=\mathbb{R}-\{x~~\text{tal que }bx=0\}\]</span></p>
+<p>Entonces, simplemente hay que igualar el denominador de la función a 0, y los valores resultantes serán aquellos puntos que <strong>no</strong> están en el dominio.</p>
+<section id="indeterminación" class="level4" data-number="1.1.1">
+<h4 data-number="1.1.1" class="anchored" data-anchor-id="indeterminación"><span class="header-section-number">1.1.1</span> Indeterminación</h4>
+<p>Es posible que en ese punto, si intentamos comprobar la <a href="#sec-continuidad">continuidad</a>, uno de los límites nos dé como resultado <span class="math inline">\(\large\frac 0 0\)</span>. Al tratarse esto de una indeterminación, no sabemos si la función es contínua o no. Para saberlo, podemos centrarnos en comprobar si la función es <a href="#sec-derivabilidad">derivable</a> en ese punto, ya que en caso de serlo, esto implicaría que es contínua. Una forma de hacer esto directamente con la fracción es aplicar <a href="#sec-lhopital">l’Hôpital</a> en la fracción y entonces hacer el límite.</p>
+</section>
+</section>
+<section id="función-que-contiene-una-raíz" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="función-que-contiene-una-raíz"><span class="header-section-number">1.2</span> Función que contiene una raíz</h3>
+<p>Como que no existen las raíces de números negativos, el valor de dentro de la raíz deberá ser mayor o igual a 0. Para eso, deberemos resolver una <a href="#sec-inecuaciones">inecuación</a>. <span class="math display">\[\text{si  } f(x)=\sqrt{ax}\Longrightarrow \text{Dom}(f(x))=(\text{interval tal que  }ax  \geq 0)\]</span></p>
+</section>
+<section id="función-que-contiene-un-logaritmo" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="función-que-contiene-un-logaritmo"><span class="header-section-number">1.3</span> Función que contiene un logaritmo</h3>
+<p>Es el mismo caso que en [[#Función que contiene una raíz |la raíz]] , con la diferencia de que no existe el logaritmo de 0. Por lo tanto: <span class="math display">\[\text{si  } f(x)=\log{(ax)}\Longrightarrow \text{Dom}(f(x))=(\text{interval tal que  }ax  &gt; 0)\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recordad que cada una de las funciones de las funciones a trozos está definida para un rango diferente indicado por los <a href="#sec-separadores">separadores</a>. Si los valores “problemáticos” se encuentran fuera del rango, los ignoramos.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="recorrido" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="recorrido"><span class="header-section-number">2</span> Recorrido</h2>
+<p>Si el dominio són aquellas <span class="math inline">\(x\)</span> que acepta nuestra función, el <strong>recorrido</strong> son aquellas <span class="math inline">\(y\)</span> que nos puede devolver. Excepto las siguientes funciones, el recorrido en general suele ser <span class="math inline">\(\mathbb R\)</span>.</p>
+<section id="recorrido-fijo" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="recorrido-fijo"><span class="header-section-number">2.1</span> Recorrido fijo</h3>
+<section id="función-raíz" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="función-raíz"><span class="header-section-number">2.1.1</span> Función raíz</h4>
+<p>En las funciones de la forma <span class="math inline">\(\sqrt x\)</span>, el recorrido será <span class="math inline">\([0,+\infty)\)</span>.</p>
+</section>
+<section id="función-logaritmo" class="level4" data-number="2.1.2">
+<h4 data-number="2.1.2" class="anchored" data-anchor-id="función-logaritmo"><span class="header-section-number">2.1.2</span> Función logaritmo</h4>
+<p>En las funciones de la forma <span class="math inline">\(\log (x)\)</span>, el recorrido será <span class="math inline">\((0,+\infty)\)</span>.</p>
+</section>
+<section id="funciones-trigonométricas" class="level4" data-number="2.1.3">
+<h4 data-number="2.1.3" class="anchored" data-anchor-id="funciones-trigonométricas"><span class="header-section-number">2.1.3</span> Funciones trigonométricas</h4>
+<p>En las funciones de las formas <span class="math inline">\(\sin(x)\)</span> o <span class="math inline">\(\cos(x)\)</span>, el recorrido será <span class="math inline">\([-1,+1]\)</span>.</p>
+</section>
+</section>
+<section id="recorrido-variable" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="recorrido-variable"><span class="header-section-number">2.2</span> Recorrido variable</h3>
+<section id="función-cuadrática" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="función-cuadrática"><span class="header-section-number">2.2.1</span> Función cuadrática</h4>
+<p>En las funciones de la forma <span class="math inline">\(ax^2+bx+c\)</span>, el recorrido depende de cual sea el <a href="#sec-extremos">extremo relativo</a> de esta función. Si <span class="math inline">\(a&gt;0\)</span>, entonces el recorrido irá de <span class="math inline">\([y_{min},+\infty)\)</span>, por lo contrario, el recorrido irá de <span class="math inline">\((-\infty,y_{max}]\)</span>.</p>
+</section>
+<section id="funciones-racionales" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="funciones-racionales"><span class="header-section-number">2.2.2</span> Funciones racionales</h4>
+<p>En las funciones de la forma <span class="math inline">\(\large \frac{1}{x}\)</span>, tenemos que aislar el valor <span class="math inline">\(x\)</span> de la función. Por ejemplo: <span class="math display">\[\begin{gathered}
+y=\frac{2x}{9x-2}\\\\
+y\cdot(9x-2)=2x\\\\
+9xy-2y=2x\\\\
+9xy-2x=2y\\\\
+x\cdot(9y-2)=2y\\\\
+x=\frac{2y}{9y-2}
+\end{gathered}\]</span> Dado esto, ahora simplemente vemos cuáles <span class="math inline">\(y\)</span> nunca podrían estar. Como que el denominador no puede dar 0, buscamos que <span class="math inline">\(y\)</span> no pueden ser parte de la función. <span class="math display">\[\begin{gathered}
+9y-2=0\\\\
+9y=2\\\\
+y=\frac 2 9
+\end{gathered}
+\]</span></p>
+<p>Por lo tanto, como no puede ser que <span class="math inline">\(y=\frac 2 9\)</span>, el recorrido será <span class="math inline">\(\mathbb{R} - \{\frac 2 9\}\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="sec-continuidad" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-continuidad"><span class="header-section-number">3</span> Continuidad</h2>
+<p>En general, para saber si una función es contínua, deberíamos observar:</p>
+<ul>
+<li>Los puntos que están fuera del dominio.</li>
+<li>Los <a href="#sec-separadores">separadores</a>. Una vez tengamos la lista de puntos, sabremos que:</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una función <span class="math inline">\(f(x)\)</span> es continua en un punto <span class="math inline">\(a\)</span> solo si: <span class="math display">\[\large\lim_{x\rightarrow a^-} f(x) = \lim_{x\rightarrow a^+} f(x)=f(a)\]</span></p>
+</div>
+</div>
+<section id="tipos-de-saltos" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="tipos-de-saltos"><span class="header-section-number">3.1</span> Tipos de saltos</h3>
+<p>Al hacer los <a href="#sec-limites">límites</a> laterales de una función <span class="math inline">\(f(x)\)</span> en un punto <span class="math inline">\(a\)</span>, la función puede ser <a href="#sec-continuidad">contínua</a> o discontínua. Aquí se detallan los diferentes tipos de discontinuidades:</p>
+<section id="función-discontínua-evitable" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="función-discontínua-evitable"><span class="header-section-number">3.1.1</span> Función discontínua evitable</h4>
+<p>Una función es <strong>discontínua evitable</strong> si: <span class="math display">\[\large\lim_{x\rightarrow a^-} =\lim_{x\rightarrow a^+}\neq f(a)\]</span></p>
+<p>Esto puede pasar, por ejemplnumber-sections: true o, si uno de los <a href="#sec-separadores">separadores</a> no está incluido en ningún intervalo.</p>
+</section>
+<section id="función-discontínua-no-evitable" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="función-discontínua-no-evitable"><span class="header-section-number">3.1.2</span> Función discontínua no evitable</h4>
+<p>Si en una función<span class="math display">\[\lim_{x\rightarrow a^-} \neq\lim_{x\rightarrow a^+}\]</span>entonces tenemos una discontinuidad <strong>no evitable</strong>. Sea <span class="math inline">\(\alpha\)</span> el resultado del límite por la izquierda y <span class="math inline">\(\beta\)</span> el resultado del límite por la derecha, tenemos los siguientes tipos de saltos:</p>
+<section id="de-salto-finito" class="level5" data-number="3.1.2.1">
+<h5 data-number="3.1.2.1" class="anchored" data-anchor-id="de-salto-finito"><span class="header-section-number">3.1.2.1</span> De salto finito</h5>
+<p>Se da si <span class="math inline">\(\large\alpha \in \mathbb R\)</span> y <span class="math inline">\(\large\beta \in \mathbb R\)</span></p>
+</section>
+<section id="de-salto-infinito" class="level5" data-number="3.1.2.2">
+<h5 data-number="3.1.2.2" class="anchored" data-anchor-id="de-salto-infinito"><span class="header-section-number">3.1.2.2</span> De salto infinito</h5>
+<p>Se da si <span class="math inline">\(\large\begin{cases}\alpha = \pm \infty\\\beta\in \mathbb R\end{cases}\)</span> o <span class="math inline">\(\large\begin{cases}\alpha \in\mathbb{R} \\\beta=\pm \infty\end{cases}\)</span></p>
+</section>
+<section id="de-salto-asintótico" class="level5" data-number="3.1.2.3">
+<h5 data-number="3.1.2.3" class="anchored" data-anchor-id="de-salto-asintótico"><span class="header-section-number">3.1.2.3</span> De salto asintótico</h5>
+<p>Se da si <span class="math inline">\(\large \alpha =\pm\infty\)</span> y <span class="math inline">\(\large \beta = \pm \infty\)</span></p>
+</section>
+<section id="de-segunda-especie" class="level5" data-number="3.1.2.4">
+<h5 data-number="3.1.2.4" class="anchored" data-anchor-id="de-segunda-especie"><span class="header-section-number">3.1.2.4</span> De segunda especie</h5>
+<p>Esta se da en casos muy concretos, cuando uno de los límites no existe o está indefinido. Por ejemplo, como que la raíz cuadrada solo acepta valores más grandes o igual que 0, si hacemos <span class="math display">\[\large \lim_{x\rightarrow 0^-}\sqrt x\]</span> veremos que no existe. En este caso diríamos que es una <strong>discontinuidad inevitable de segunda especie</strong>.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="asíntotas" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="asíntotas"><span class="header-section-number">4</span> Asíntotas</h2>
+<p>Debemos comprobar si una función tiene <strong>asíntotas verticales</strong> u <strong>horizontales</strong>.</p>
+<section id="asíntotas-horizontales" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="asíntotas-horizontales"><span class="header-section-number">4.1</span> Asíntotas horizontales</h3>
+<p>Para comprobar si existen asíntotas horizontales, hay que hacer los límites de <span class="math inline">\(x\)</span> a <span class="math inline">\(\infty\)</span> y <span class="math inline">\(-\infty\)</span>. Si el resultado: - Es <span class="math inline">\(\infty\)</span> o <span class="math inline">\(-\infty\)</span>, entonces <strong>no existe</strong> asíntota horizontal - Es un número <span class="math inline">\(n\)</span>, entonces existe una asíntota horizontal en <span class="math inline">\(y=n\)</span>.</p>
+</section>
+<section id="asíntotas-verticales" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="asíntotas-verticales"><span class="header-section-number">4.2</span> Asíntotas verticales</h3>
+<p>Para comprobar si existen asíntotas verticales, hay que hacer los límites de <span class="math inline">\(x\)</span> a los puntos fuera del <a href="#sec-dominio">dominio</a> y a los <a href="#sec-separadores">separadores</a>. Si el resultado de hacer los límites de <span class="math inline">\(x\)</span> a un punto <span class="math inline">\(a\)</span>:</p>
+<ul>
+<li>Es un número <span class="math inline">\(n\)</span>, entonces <strong>no existe</strong> asíntota vertical.</li>
+<li>Es <span class="math inline">\(\infty\)</span> o <span class="math inline">\(-\infty\)</span>, entonces existe una asíntota vertical en <span class="math inline">\(x=a\)</span>.
+<ul>
+<li>Por ambos lados (esta es la que se refiere por defecto).</li>
+<li>La asíntota puede ser por la izquierda (si solo da <span class="math inline">\(\pm\infty\)</span> en <span class="math inline">\(x\rightarrow a^-\)</span>)</li>
+<li>La asíntota puede ser por la derecha (si solo da <span class="math inline">\(\pm\infty\)</span> en <span class="math inline">\(x\rightarrow a^+\)</span>)</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="sec-tangente" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-tangente"><span class="header-section-number">5</span> Recta tangente</h2>
+<p>Dada una función <span class="math inline">\(\large f(x)\)</span> y un punto <span class="math inline">\(\large a\)</span>, podemos definir la <strong>recta tangente</strong> como aquella recta que corta con <span class="math inline">\(f(x)\)</span> una única vez, en el punto <span class="math inline">\(x=a\)</span>. Podemos obtener la recta con la siguiente fórmula: <span class="math display">\[\large y-f(a)=f'(a)\cdot(x-a)\]</span> Donde <span class="math inline">\(a\)</span> es el punto donde intersectan la función <span class="math inline">\(f(x)\)</span> y la recta.</p>
+<p>Es importante denotar que <span class="math inline">\(f'(a)\)</span> es la <strong>pendiente</strong> de la recta.</p>
+</section>
+<section id="extremos-relativos-y-estudio-del-crecimiento" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="extremos-relativos-y-estudio-del-crecimiento"><span class="header-section-number">6</span> Extremos relativos y estudio del crecimiento</h2>
+<section id="sec-extremos" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="sec-extremos"><span class="header-section-number">6.1</span> Extremos relativos</h3>
+<p>Dada una función, los extremos relativos son los puntos en los que la <span class="math inline">\(y\)</span> alcanza sus valores <strong>máximos</strong> o <strong>mínimos</strong>. Para encontrar en que <span class="math inline">\(x\)</span> hay valores máximos o mínimos hay que ver los puntos en los que la <a href="#sec-pendiente">pendiente</a> es 0, es decir, cuando: <span class="math display">\[\large f'(x)=0\]</span> Para esto simplemente resolvemos la ecuación y obtendremos en qué <span class="math inline">\(x\)</span> encontramos un <strong>extremo relativo</strong>. Si encontramos un extremo relativo en <span class="math inline">\(a\)</span>, podemos saber qué tipo de extremo relativo es:</p>
+<ul>
+<li>Hay un <strong>mínimo</strong> en <span class="math inline">\(x=a\)</span> si <span class="math inline">\(f''(a) &gt; 0\)</span>.</li>
+<li>Hay un <strong>máximo</strong> en <span class="math inline">\(x=a\)</span> si <span class="math inline">\(f''(a)&lt;0\)</span>. Si nos pidiera encontrar la coordenada donde está ese máximo, la <span class="math inline">\(x\)</span> sería <span class="math inline">\(a\)</span> y la <span class="math inline">\(y\)</span> sería <span class="math inline">\(f(a)\)</span>.</li>
+</ul>
+</section>
+<section id="estudio-del-crecimiento" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="estudio-del-crecimiento"><span class="header-section-number">6.2</span> Estudio del crecimiento</h3>
+<p>Para el estudio del crecimiento de una función, primero tendremos que haber encontrado sus <a href="#sec-extremos">extremos</a> y haber analizado el <a href="#sec-dominio">dominio</a>. Cuando los tengamos, tenemos que separar la recta numérica usando:</p>
+<ul>
+<li>Los extremos relativos.</li>
+<li>Los puntos que no están en el [[#Dominio|dominio]].</li>
+<li>Los <a href="#sec-separadores">separadores</a></li>
+</ul>
+<p>Digamos que tenemos los puntos <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span>, siendo <span class="math inline">\(a&lt;b&lt;c\)</span>. Entonces, separamos la recta numérica en los intervalos <span class="math inline">\((-\infty,a),(a,b),(b,c),(c,+\infty)\)</span>. Una vez separada, elegiremos un número cualquiera de cada intervalo. Imaginemos que elegimos <span class="math inline">\(\alpha\in(-\infty,a)\)</span>, <span class="math inline">\(\beta\in (a,b)\)</span>, <span class="math inline">\(\gamma\in (b,c)\)</span>, <span class="math inline">\(\delta\in (c,+\infty)\)</span>. Para saber si la función crece o decrece en ese intervalo tenemos que tomar ese valor y sustituirlo en la derivada (<span class="math inline">\(f'(\alpha),f'(\beta),f'(\gamma),f'(\delta)\)</span>), ya que así conseguiremos la <a href="#sec-pendiente">pendiente</a> (que es lo que nos indica si crece o decrece). Podemos decir que la función <strong>crece</strong> en un intervalo si la pendiente de un punto del intervalo es <strong>positiva</strong>. Si en cambio, es <strong>negativa</strong>, entonces <strong>decrece</strong>. <em>Ejemplo:</em> <span class="math display">\[
+\begin{gathered}
+\text{puntos separadores: }-2,4\\
+\text{intervalos: }(-\infty,-2),(-2,4),(4,+\infty)\\
+\text{puntos cualquiera de cada intervalo:}-5,0,10\\
+\text{imaginemos que: }f'(-5)=3,f'(0)=-2,f'(10)=4\\
+\text{entonces:}
+\end{gathered}
+\]</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\((-\infty,-2)\)</span></th>
+<th><span class="math inline">\((-2,4)\)</span></th>
+<th><span class="math inline">\((4,+\infty)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>signo</strong> <span class="math inline">\(f'(x)\)</span></td>
+<td><span class="math inline">\(+\)</span></td>
+<td><span class="math inline">\(-\)</span></td>
+<td><span class="math inline">\(+\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>forma</strong> <span class="math inline">\(f(x)\)</span></td>
+<td><span class="math inline">\(\nearrow\)</span></td>
+<td><span class="math inline">\(\searrow\)</span></td>
+<td><span class="math inline">\(\nearrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Entonces podemos decir que <span class="math inline">\(f(x)\)</span> es <strong>creciente</strong> en <span class="math inline">\((-\infty,-2)\cup(4,+\infty)\)</span> y <strong>decreciente</strong> en <span class="math inline">\((-2,4)\)</span>.</p>
+</section>
+</section>
+<section id="sec-derivabilidad" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="sec-derivabilidad"><span class="header-section-number">7</span> Derivabilidad</h2>
+<p>Para que una función sea derivable, tiene que ser <a href="#sec-continuidad">contínua</a>. Es decir, una función derivable <strong>siempre</strong> será contínua pero una contínua <strong>no siempre</strong> será derivable.</p>
+<p>Para comprobar que una función <span class="math inline">\(f(x)\)</span> es derivable en un punto <span class="math inline">\(a\)</span> debemos comprobar que la derivada a izquierda y derecha de <span class="math inline">\(a\)</span> es la misma, es decir: <span class="math display">\[f'_-(a)=f'_+(a)\]</span></p>
+<p>Si son iguales, significa que <span class="math inline">\(f(a)\)</span> es derivable en <span class="math inline">\(a\)</span>.</p>
+<p><em>Ejemplo:</em> <span class="math display">\[
+f(x)=\begin{cases}
+    x^2&amp;\text{si }x\leq1\\
+    2x-1 &amp;\text{si }1&lt;x
+\end{cases}\\\\
+\]</span></p>
+<p><em>Es contínua, por lo tanto puede ser derivable.</em> <em>Estudiamos su derivabilidad en <span class="math inline">\(x=1\)</span>:</em> <span class="math display">\[\begin{gathered}
+f'_-(1)=(x^2)'=2x=2\cdot(1)=2\\\\
+f'_+(1)=(2x-1)'=2
+\end{gathered}
+\]</span></p>
+<p><em>Por lo tanto, <strong>sí</strong> es derivable</em>.</p>
+<hr>
+<section id="extra-1-resolver-inecuaciones" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="extra-1-resolver-inecuaciones">Extra 1: Resolver inecuaciones</h3>
+<p>El proceso de resolver inecuaciones es relativamente sencillo. Todo depende de qué tipo queramos resolver. Aquí se explicaran aquellas que os seran útiles.</p>
+<section id="inecuaciones-de-primer-grado" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="inecuaciones-de-primer-grado">Inecuaciones de primer grado</h5>
+<p>Son inecuaciones de la forma <span class="math inline">\(ax+b\geq 0\)</span>. Se resuelven de la misma manera que las ecuaciones de primer grado, con la excepción de que <strong>si multiplicamos o dividimos por un número negativo</strong>, hay que girar el signo. <em>Ejemplo</em>: <span class="math display">\[\begin{gathered}-3x+4\geq0
+\\ -3x \geq-4
+\\ x\textcolor{red}{\leq}\frac{-4}{-3}
+\\ x \leq \frac 4 3
+\\\text{Respuesta: } (-\infty,\frac 4 3)
+\end{gathered}
+\]</span></p>
+</section>
+<section id="sec-inecuaciones" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="sec-inecuaciones">Inecuaciones de segundo grado</h5>
+<p>Son inecuaciones de la forma <span class="math inline">\(ax^2 + bx +c \geq 0\)</span>. Primero calcularemos las raíces, es decir, lo resolveremos como si fuera una ecuación de segundo grado normal. Eso nos dará 2 respuestas <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span>. Para saber qué intervalo tomar, solo tenemos que mirar <span class="math inline">\(a\)</span>. Si <span class="math inline">\(a &gt; 0\)</span>, entonces el resultado será positivo solo fuera del intervalo <span class="math inline">\([x_1,x_2]\)</span>, pero si <span class="math inline">\(a&lt;0\)</span>, entonces el resultado solo será positivo dentro del intervalo <span class="math inline">\([x_1,x_2]\)</span>. En resumen, dada una <span class="math inline">\(f(x)\)</span> que contiene una raíz por ejemplo: <span class="math display">\[\begin{gather}
+\text{Dom}(f(x))=
+\begin{cases}
+(-\infty,x_1)\cup(x_2,+\infty)&amp;\text{si } a&gt;0
+\\ [x_1,x_2] &amp; \text{si } a&lt;0
+\end{cases}
+\end{gather}
+\]</span></p>
+</section>
+</section>
+<section id="sec-limites" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-limites">Extra 2: Límites</h3>
+<p>Para trabajar con límites, debemos tener en cuenta lo siguiente (no es algo exacto, ya que lo tomamos como referencia al trabajar con límites). Dados números <span class="math inline">\(n,m\in\mathbb{R}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\large\infty + n = \infty\)</span></li>
+<li><span class="math inline">\(\large \infty^n + \infty^m = \infty^{max(n,m)}\)</span></li>
+<li><span class="math inline">\(n &lt; \log \infty &lt; \sqrt \infty &lt; \infty &lt; \infty^n &lt; n^{\infty}\)</span></li>
+<li><span class="math inline">\(\large\frac 1 \infty = 0\)</span></li>
+<li><span class="math inline">\(\large \frac 1 0 = \infty\)</span></li>
+<li>En fracciones con infinitos: <span class="math display">\[\frac{n\cdot \infty_1}{m\cdot\infty_2}=\begin{cases}
+\infty &amp; \text{si }\infty_1&gt;\infty_2\\
+0&amp;\text{si }\infty_2&gt;\infty_1\\
+\frac n m &amp; \text{si }\infty_1 = \infty_2
+\end{cases}
+\]</span></li>
+</ul>
+</section>
+<section id="sec-lhopital" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-lhopital">Extra 3: L’Hôpital</h3>
+<p>Si al hacer un límite nos surge la indeterminación <span class="math inline">\(\large\frac 0 0\)</span>, podemos aplicar la <strong>regla de l’Hôpital</strong>. Para aplicarla, hay que hacer la derivada del numerador y el denominador por separado: <span class="math display">\[\large \lim_{x\rightarrow a}\frac{f}{g}=\lim_{x\rightarrow a}\frac{f'}{g'}\]</span></p>
+<p><em>Ejemplo:</em> <span class="math display">\[
+\begin{gathered}\large
+\lim_{x\rightarrow-2}\frac{x+2}{x^2+3x+2}=\frac{-2+2}{(-2)^2+3\cdot(-2)+2}=\frac 0 0\\\\\large
+\frac{x+2}{x^2+3x+2}\overset{\text{l'Hôpital}}{\Longrightarrow}\frac{1}{2x+3}\\\\
+\lim_{x\rightarrow-2}\frac{1}{2x+3}=\frac{1}{2\cdot(-2)+3}=\frac{1}{-4+3}=\frac{1}{-1}=-1
+\end{gathered}
+\]</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Esta web pertenece a <a href="https://nsaadig16.github.io">Naïm Saadi</a> y es de uso <strong>exclusivo</strong> de los alumnos y alumnas de la academia Gauss.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
