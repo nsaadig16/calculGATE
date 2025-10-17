@@ -2,6 +2,12 @@ project:
   type: website
 
 website:
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "Se ha añadido la página [optimización](/contents/optimizacion.qmd)."
+    type: info
+    position: below-navbar
   title: "CálculoGATE"
   favicon: "/favicon.ico"
   page-footer:  
@@ -13,6 +19,8 @@ website:
     left:
       - href: contents/analisis.qmd
         text: Análisis de funciones
+      - href: contents/optimizacion.qmd
+        text: Optimización
 
 format:
   html:
