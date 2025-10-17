@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Naïm Saadi">
+<meta name="dcterms.date" content="2025-10-17">
 
-<title>Cálculo GATE – CálculoGATE</title>
+<title>Optimización – CálculoGATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-82862045ce3fe7a8ccd219cda00daa0e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-82862045ce3fe7a8ccd219cda00daa0e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -130,7 +101,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -140,11 +111,11 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./favicon.ico" alt="" class="navbar-logo light-content">
-    <img src="./favicon.ico" alt="" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../favicon.ico" alt="" class="navbar-logo light-content">
+    <img src="../favicon.ico" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CálculoGATE</span>
     </a>
   </div>
@@ -155,7 +126,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./contents/analisis.html"> 
+    <a class="nav-link" href="../contents/analisis.html"> 
 <span class="menu-text">Análisis de funciones</span></a>
   </li>  
 </ul>
@@ -165,29 +136,61 @@ window.Quarto = {
       </div> <!-- /container-fluid -->
     </nav>
   <div id="quarto-announcement" data-announcement-id="e3d568490c7a90b76236a28a1d609ea9" class="alert alert-info hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>Se ha añadido la página <a href="./contents/optimizacion.html">optimización</a>.</p>
+<p>Se ha añadido la página <a href="../contents/optimizacion.html">optimización</a>.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#elementos-de-un-problema" id="toc-elementos-de-un-problema" class="nav-link active" data-scroll-target="#elementos-de-un-problema"><span class="header-section-number">1</span> Elementos de un problema</a>
+  <ul class="collapse">
+  <li><a href="#sec-variables" id="toc-sec-variables" class="nav-link" data-scroll-target="#sec-variables"><span class="header-section-number">1.1</span> Variables</a></li>
+  <li><a href="#sec-info" id="toc-sec-info" class="nav-link" data-scroll-target="#sec-info"><span class="header-section-number">1.2</span> Información previa</a></li>
+  <li><a href="#sec-func" id="toc-sec-func" class="nav-link" data-scroll-target="#sec-func"><span class="header-section-number">1.3</span> Función a minimizar o maximizar</a></li>
+  </ul></li>
+  <li><a href="#resolución-del-problema" id="toc-resolución-del-problema" class="nav-link" data-scroll-target="#resolución-del-problema"><span class="header-section-number">2</span> Resolución del problema</a>
+  <ul class="collapse">
+  <li><a href="#obtener-la-función-a-minimizarmaximizar" id="toc-obtener-la-función-a-minimizarmaximizar" class="nav-link" data-scroll-target="#obtener-la-función-a-minimizarmaximizar"><span class="header-section-number">2.1</span> Obtener la función a minimizar/maximizar:</a></li>
+  <li><a href="#sec-ec" id="toc-sec-ec" class="nav-link" data-scroll-target="#sec-ec"><span class="header-section-number">2.2</span> Encontrar la equivalencia entre las dos variables:</a></li>
+  <li><a href="#expresar-la-función-con-una-única-variable" id="toc-expresar-la-función-con-una-única-variable" class="nav-link" data-scroll-target="#expresar-la-función-con-una-única-variable"><span class="header-section-number">2.3</span> Expresar la función con una única variable:</a></li>
+  <li><a href="#encontrar-para-que-valor-la-función-es-máximamínima" id="toc-encontrar-para-que-valor-la-función-es-máximamínima" class="nav-link" data-scroll-target="#encontrar-para-que-valor-la-función-es-máximamínima"><span class="header-section-number">2.4</span> Encontrar para que valor la función es máxima/mínima</a></li>
+  <li><a href="#encontrar-el-otro-valor-con-la-ecuación" id="toc-encontrar-el-otro-valor-con-la-ecuación" class="nav-link" data-scroll-target="#encontrar-el-otro-valor-con-la-ecuación"><span class="header-section-number">2.5</span> Encontrar el otro valor con la ecuación</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-de-ejemplo" id="toc-ejercicio-de-ejemplo" class="nav-link" data-scroll-target="#ejercicio-de-ejemplo"><span class="header-section-number">3</span> Ejercicio de ejemplo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cálculo GATE</h1>
+<h1 class="title">Optimización</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Naïm Saadi <a href="mailto:nsaadig16@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-10-17</p>
+    </div>
+  </div>
   
     
   </div>
@@ -197,65 +200,103 @@ window.Quarto = {
 </header>
 
 
-<p>Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.</p>
-<p>Tenemos las siguientes páginas:</p>
+<p>Aquí encontraréis una guía de como resolver problemas de optimización.</p>
+<section id="elementos-de-un-problema" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="elementos-de-un-problema"><span class="header-section-number">1</span> Elementos de un problema</h2>
+<p>En un problema de optimización, solemos encontrar los siguientes elementos:</p>
+<section id="sec-variables" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="sec-variables"><span class="header-section-number">1.1</span> Variables</h3>
+<p>En los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos <strong>variables</strong>, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.</p>
+</section>
+<section id="sec-info" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="sec-info"><span class="header-section-number">1.2</span> Información previa</h3>
+<p>Para poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de <strong>información previa</strong> para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de <strong>ecuación</strong>.</p>
+</section>
+<section id="sec-func" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="sec-func"><span class="header-section-number">1.3</span> Función a minimizar o maximizar</h3>
+<p>Para acabar, debemos tener una <strong>función</strong> o <strong>cualidad</strong> del problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos <a href="#sec-variables">variables</a>.</p>
+</section>
+</section>
+<section id="resolución-del-problema" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="resolución-del-problema"><span class="header-section-number">2</span> Resolución del problema</h2>
+<p>Se puede resolver un problema de optimización siguiendo estos pasos:</p>
+<section id="obtener-la-función-a-minimizarmaximizar" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="obtener-la-función-a-minimizarmaximizar"><span class="header-section-number">2.1</span> Obtener la <a href="#sec-func">función a minimizar/maximizar</a>:</h3>
+<p>Dadas las variables <span class="math inline">\(\large a\)</span> y <span class="math inline">\(\large b\)</span>, debemos formar la función <span class="math inline">\(\large f(a,b)\)</span> de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables.</p>
+</section>
+<section id="sec-ec" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="sec-ec"><span class="header-section-number">2.2</span> Encontrar la equivalencia entre las dos variables:</h3>
+<p>Debemos expresar <span class="math inline">\(\large a\)</span> en función de <span class="math inline">\(\large b\)</span>, o por lo contrario, <span class="math inline">\(\large b\)</span> en función de <span class="math inline">\(\large a\)</span>, usando la <a href="#sec-info">información previa</a>.</p>
+</section>
+<section id="expresar-la-función-con-una-única-variable" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="expresar-la-función-con-una-única-variable"><span class="header-section-number">2.3</span> Expresar la función con una única variable:</h3>
+<p>Ahora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado <span class="math inline">\(\large a\)</span>, la sustituimos en la función de forma que <span class="math inline">\(\large f(a,b)\)</span> pase a ser <span class="math inline">\(\large f(b)\)</span>.</p>
+</section>
+<section id="encontrar-para-que-valor-la-función-es-máximamínima" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="encontrar-para-que-valor-la-función-es-máximamínima"><span class="header-section-number">2.4</span> Encontrar para que valor la función es máxima/mínima</h3>
+<p>Una vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0 (ver <a href="../contents/analisis.html#sec-extremos">aquí</a>). Si nos dan más de dos valores, comprobad si son máximos o mínimos y que concuerde con el enunciado.</p>
+</section>
+<section id="encontrar-el-otro-valor-con-la-ecuación" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="encontrar-el-otro-valor-con-la-ecuación"><span class="header-section-number">2.5</span> Encontrar el otro valor con la <a href="#sec-info">ecuación</a></h3>
+<p>Ahora que ya tenemos una de las dos <a href="#sec-variables">variables</a>, solo hace falta sustituirla en la ecuación que hemos obtenido en el paso <a href="#sec-ec" class="quarto-xref">2.2</a>, y de esta forma ya obtendremos las dos dimensiones.</p>
+</section>
+</section>
+<section id="ejercicio-de-ejemplo" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ejercicio-de-ejemplo"><span class="header-section-number">3</span> Ejercicio de ejemplo</h2>
+<blockquote class="blockquote">
+<p>De todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?</p>
+</blockquote>
+<p>Obtenemos lo siguiente:</p>
+<ul>
+<li>Variables:
+<ul>
+<li><span class="math inline">\(\large b\)</span>: base del rectángulo</li>
+<li><span class="math inline">\(\large h\)</span>: altura del rectángulo</li>
+</ul></li>
+<li>Información previa:
+<ul>
+<li>El perímetro es 20cm, por lo tanto: <span class="math inline">\(\large 2b + 2h = 20\)</span></li>
+</ul></li>
+<li>Función a maximizar:
+<ul>
+<li>Área, por lo tanto: <span class="math inline">\(\large A(b,h) = b\cdot h\)</span></li>
+</ul></li>
+</ul>
+<p>Encontramos la ecuación:</p>
+<p><span class="math display">\[\begin{gathered}
+2b + 2h=20\\
+2b = 20 -2h\\
+b = \frac{20-2h}{2}\\
+b = 10-h
+\end{gathered}\]</span></p>
+<p>Ahora lo sustituimos en la función:</p>
+<p><span class="math display">\[\begin{gathered}
+A(b,h) = b\cdot h\\
+A(h) = (10-h)\cdot h\\
+A(h) = -h^2 + 10h
+\end{gathered}\]</span></p>
+<p>Encontramos el mínimo</p>
+<p><span class="math display">\[\begin{gathered}
+A(h) = -h^2 + 10h\\
+A'(h) = -2h+10\\
+A'(h) = 0\\
+-2h+10 = 0\\
+-2h = -10\\
+h = \frac{-10}{-2}\\
+h = 5
+\end{gathered}\]</span></p>
+<p>Y una vez tenemos <span class="math inline">\(\large h\)</span>, conseguimos <span class="math inline">\(\large b\)</span>:</p>
+<p><span class="math display">\[\begin{gathered}
+b = 10 -h\\
+b = 10 - 5\\
+b = 5
+\end{gathered}\]</span></p>
+<p>Así conseguimos <span class="math inline">\(\large h=5, b=5\)</span>, es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table table-striped table-hover">
-<thead>
-<tr>
-
-<th>
-Fecha
-</th>
-
-<th>
-Tema
-</th>
-
-<th>
-Autor
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1760565600000" data-listing-file-modified-sort="1760609562447" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1766" data-listing-title-sort="Análisis de funciones" data-listing-filename-sort="analisis.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2025-10-16</span>
-</td>
-<td>
-<a href="./contents/analisis.html" class="title listing-title">Análisis de funciones</a>
-</td>
-<td>
-<span class="listing-author">Naïm Saadi</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1760652000000" data-listing-file-modified-sort="1760697505090" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="507" data-listing-title-sort="Optimización" data-listing-filename-sort="optimizacion.qmd" onclick="href = this.querySelector('a').getAttribute('href');
- if (href) { window.location=href ; return false; }">
-<td>
-<span class="listing-date">2025-10-17</span>
-</td>
-<td>
-<a href="./contents/optimizacion.html" class="title listing-title">Optimización</a>
-</td>
-<td>
-<span class="listing-author">Naïm Saadi</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
