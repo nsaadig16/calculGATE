@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "contents/optimizacion.html",
-    "href": "contents/optimizacion.html",
-    "title": "Optimización",
-    "section": "",
-    "text": "Aquí encontraréis una guía de como resolver problemas de optimización."
-  },
-  {
-    "objectID": "contents/optimizacion.html#elementos-de-un-problema",
-    "href": "contents/optimizacion.html#elementos-de-un-problema",
-    "title": "Optimización",
-    "section": "1 Elementos de un problema",
-    "text": "1 Elementos de un problema\nEn un problema de optimización, solemos encontrar los siguientes elementos:\n\n1.1 Variables\nEn los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos variables, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.\n\n\n1.2 Información previa\nPara poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de información previa para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de ecuación.\n\n\n1.3 Función a minimizar o maximizar\nPara acabar, debemos tener una función o cualidad del problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos variables."
-  },
-  {
-    "objectID": "contents/optimizacion.html#resolución-del-problema",
-    "href": "contents/optimizacion.html#resolución-del-problema",
-    "title": "Optimización",
-    "section": "2 Resolución del problema",
-    "text": "2 Resolución del problema\nSe puede resolver un problema de optimización siguiendo estos pasos:\n\n2.1 Obtener la función a minimizar/maximizar:\nDadas las variables \\(\\large a\\) y \\(\\large b\\), debemos formar la función \\(\\large f(a,b)\\) de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables.\n\n\n2.2 Encontrar la equivalencia entre las dos variables:\nDebemos expresar \\(\\large a\\) en función de \\(\\large b\\), o por lo contrario, \\(\\large b\\) en función de \\(\\large a\\), usando la información previa.\n\n\n2.3 Expresar la función con una única variable:\nAhora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado \\(\\large a\\), la sustituimos en la función de forma que \\(\\large f(a,b)\\) pase a ser \\(\\large f(b)\\).\n\n\n2.4 Encontrar para que valor la función es máxima/mínima\nUna vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0 (ver aquí). Si nos dan más de dos valores, comprobad si son máximos o mínimos y que concuerde con el enunciado.\n\n\n2.5 Encontrar el otro valor con la ecuación\nAhora que ya tenemos una de las dos variables, solo hace falta sustituirla en la ecuación que hemos obtenido en el paso 2.2, y de esta forma ya obtendremos las dos dimensiones."
-  },
-  {
-    "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo",
-    "href": "contents/optimizacion.html#ejercicio-de-ejemplo",
-    "title": "Optimización",
-    "section": "3 Ejercicio de ejemplo",
-    "text": "3 Ejercicio de ejemplo\n\nDe todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?\n\nObtenemos lo siguiente:\n\nVariables:\n\n\\(\\large b\\): base del rectángulo\n\\(\\large h\\): altura del rectángulo\n\nInformación previa:\n\nEl perímetro es 20cm, por lo tanto: \\(\\large 2b + 2h = 20\\)\n\nFunción a maximizar:\n\nÁrea, por lo tanto: \\(\\large A(b,h) = b\\cdot h\\)\n\n\nEncontramos la ecuación:\n\\[\\begin{gathered}\n2b + 2h=20\\\\\n2b = 20 -2h\\\\\nb = \\frac{20-2h}{2}\\\\\nb = 10-h\n\\end{gathered}\\]\nAhora lo sustituimos en la función:\n\\[\\begin{gathered}\nA(b,h) = b\\cdot h\\\\\nA(h) = (10-h)\\cdot h\\\\\nA(h) = -h^2 + 10h\n\\end{gathered}\\]\nEncontramos el mínimo\n\\[\\begin{gathered}\nA(h) = -h^2 + 10h\\\\\nA'(h) = -2h+10\\\\\nA'(h) = 0\\\\\n-2h+10 = 0\\\\\n-2h = -10\\\\\nh = \\frac{-10}{-2}\\\\\nh = 5\n\\end{gathered}\\]\nY una vez tenemos \\(\\large h\\), conseguimos \\(\\large b\\):\n\\[\\begin{gathered}\nb = 10 -h\\\\\nb = 10 - 5\\\\\nb = 5\n\\end{gathered}\\]\nAsí conseguimos \\(\\large h=5, b=5\\), es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Cálculo GATE",
-    "section": "",
-    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "contents/analisis.html",
     "href": "contents/analisis.html",
     "title": "Análisis de funciones",
@@ -96,5 +61,40 @@
     "title": "Análisis de funciones",
     "section": "7 Derivabilidad",
     "text": "7 Derivabilidad\nPara que una función sea derivable, tiene que ser contínua. Es decir, una función derivable siempre será contínua pero una contínua no siempre será derivable.\nPara comprobar que una función \\(f(x)\\) es derivable en un punto \\(a\\) debemos comprobar que la derivada a izquierda y derecha de \\(a\\) es la misma, es decir: \\[f'_-(a)=f'_+(a)\\]\nSi son iguales, significa que \\(f(a)\\) es derivable en \\(a\\).\nEjemplo: \\[\nf(x)=\\begin{cases}\n    x^2&\\text{si }x\\leq1\\\\\n    2x-1 &\\text{si }1&lt;x\n\\end{cases}\\\\\\\\\n\\]\nEs contínua, por lo tanto puede ser derivable. Estudiamos su derivabilidad en \\(x=1\\): \\[\\begin{gathered}\nf'_-(1)=(x^2)'=2x=2\\cdot(1)=2\\\\\\\\\nf'_+(1)=(2x-1)'=2\n\\end{gathered}\n\\]\nPor lo tanto, sí es derivable.\n\n\nExtra 1: Resolver inecuaciones\nEl proceso de resolver inecuaciones es relativamente sencillo. Todo depende de qué tipo queramos resolver. Aquí se explicaran aquellas que os seran útiles.\n\nInecuaciones de primer grado\nSon inecuaciones de la forma \\(ax+b\\geq 0\\). Se resuelven de la misma manera que las ecuaciones de primer grado, con la excepción de que si multiplicamos o dividimos por un número negativo, hay que girar el signo. Ejemplo: \\[\\begin{gathered}-3x+4\\geq0\n\\\\ -3x \\geq-4\n\\\\ x\\textcolor{red}{\\leq}\\frac{-4}{-3}\n\\\\ x \\leq \\frac 4 3\n\\\\\\text{Respuesta: } (-\\infty,\\frac 4 3)\n\\end{gathered}\n\\]\n\n\nInecuaciones de segundo grado\nSon inecuaciones de la forma \\(ax^2 + bx +c \\geq 0\\). Primero calcularemos las raíces, es decir, lo resolveremos como si fuera una ecuación de segundo grado normal. Eso nos dará 2 respuestas \\(x_1\\) y \\(x_2\\). Para saber qué intervalo tomar, solo tenemos que mirar \\(a\\). Si \\(a &gt; 0\\), entonces el resultado será positivo solo fuera del intervalo \\([x_1,x_2]\\), pero si \\(a&lt;0\\), entonces el resultado solo será positivo dentro del intervalo \\([x_1,x_2]\\). En resumen, dada una \\(f(x)\\) que contiene una raíz por ejemplo: \\[\\begin{gather}\n\\text{Dom}(f(x))=\n\\begin{cases}\n(-\\infty,x_1)\\cup(x_2,+\\infty)&\\text{si } a&gt;0\n\\\\ [x_1,x_2] & \\text{si } a&lt;0\n\\end{cases}\n\\end{gather}\n\\]\n\n\n\nExtra 2: Límites\nPara trabajar con límites, debemos tener en cuenta lo siguiente (no es algo exacto, ya que lo tomamos como referencia al trabajar con límites). Dados números \\(n,m\\in\\mathbb{R}\\):\n\n\\(\\large\\infty + n = \\infty\\)\n\\(\\large \\infty^n + \\infty^m = \\infty^{max(n,m)}\\)\n\\(n &lt; \\log \\infty &lt; \\sqrt \\infty &lt; \\infty &lt; \\infty^n &lt; n^{\\infty}\\)\n\\(\\large\\frac 1 \\infty = 0\\)\n\\(\\large \\frac 1 0 = \\infty\\)\nEn fracciones con infinitos: \\[\\frac{n\\cdot \\infty_1}{m\\cdot\\infty_2}=\\begin{cases}\n\\infty & \\text{si }\\infty_1&gt;\\infty_2\\\\\n0&\\text{si }\\infty_2&gt;\\infty_1\\\\\n\\frac n m & \\text{si }\\infty_1 = \\infty_2\n\\end{cases}\n\\]\n\n\n\nExtra 3: L’Hôpital\nSi al hacer un límite nos surge la indeterminación \\(\\large\\frac 0 0\\), podemos aplicar la regla de l’Hôpital. Para aplicarla, hay que hacer la derivada del numerador y el denominador por separado: \\[\\large \\lim_{x\\rightarrow a}\\frac{f}{g}=\\lim_{x\\rightarrow a}\\frac{f'}{g'}\\]\nEjemplo: \\[\n\\begin{gathered}\\large\n\\lim_{x\\rightarrow-2}\\frac{x+2}{x^2+3x+2}=\\frac{-2+2}{(-2)^2+3\\cdot(-2)+2}=\\frac 0 0\\\\\\\\\\large\n\\frac{x+2}{x^2+3x+2}\\overset{\\text{l'Hôpital}}{\\Longrightarrow}\\frac{1}{2x+3}\\\\\\\\\n\\lim_{x\\rightarrow-2}\\frac{1}{2x+3}=\\frac{1}{2\\cdot(-2)+3}=\\frac{1}{-4+3}=\\frac{1}{-1}=-1\n\\end{gathered}\n\\]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cálculo GATE",
+    "section": "",
+    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contents/optimizacion.html",
+    "href": "contents/optimizacion.html",
+    "title": "Optimización",
+    "section": "",
+    "text": "Aquí encontraréis una guía de como resolver problemas de optimización."
+  },
+  {
+    "objectID": "contents/optimizacion.html#elementos-de-un-problema",
+    "href": "contents/optimizacion.html#elementos-de-un-problema",
+    "title": "Optimización",
+    "section": "1 Elementos de un problema",
+    "text": "1 Elementos de un problema\nEn un problema de optimización, solemos encontrar los siguientes elementos:\n\n1.1 Variables\nEn los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos variables, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.\n\n\n1.2 Información previa\nPara poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de información previa para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de ecuación.\n\n\n1.3 Función a minimizar o maximizar\nPara acabar, debemos tener una función o cualidad del problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos variables."
+  },
+  {
+    "objectID": "contents/optimizacion.html#resolución-del-problema",
+    "href": "contents/optimizacion.html#resolución-del-problema",
+    "title": "Optimización",
+    "section": "2 Resolución del problema",
+    "text": "2 Resolución del problema\nSe puede resolver un problema de optimización siguiendo estos pasos:\n\n2.1 Obtener la función a minimizar/maximizar:\nDadas las variables \\(\\large a\\) y \\(\\large b\\), debemos formar la función \\(\\large f(a,b)\\) de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables.\n\n\n2.2 Encontrar la equivalencia entre las dos variables:\nDebemos expresar \\(\\large a\\) en función de \\(\\large b\\), o por lo contrario, \\(\\large b\\) en función de \\(\\large a\\), usando la información previa.\n\n\n2.3 Expresar la función con una única variable:\nAhora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado \\(\\large a\\), la sustituimos en la función de forma que \\(\\large f(a,b)\\) pase a ser \\(\\large f(b)\\).\n\n\n2.4 Encontrar para que valor la función es máxima/mínima\nUna vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0 (ver aquí). Si nos dan más de dos valores, comprobad si son máximos o mínimos y que concuerde con el enunciado.\n\n\n2.5 Encontrar el otro valor con la ecuación\nAhora que ya tenemos una de las dos variables, solo hace falta sustituirla en la ecuación que hemos obtenido en el paso 2.2, y de esta forma ya obtendremos las dos dimensiones."
+  },
+  {
+    "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo",
+    "href": "contents/optimizacion.html#ejercicio-de-ejemplo",
+    "title": "Optimización",
+    "section": "3 Ejercicio de ejemplo",
+    "text": "3 Ejercicio de ejemplo\n\nDe todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?\n\nObtenemos lo siguiente:\n\nVariables:\n\n\\(\\large b\\): base del rectángulo\n\\(\\large h\\): altura del rectángulo\n\nInformación previa:\n\nEl perímetro es 20cm, por lo tanto: \\(\\large 2b + 2h = 20\\)\n\nFunción a maximizar:\n\nÁrea, por lo tanto: \\(\\large A(b,h) = b\\cdot h\\)\n\n\nEncontramos la ecuación:\n\\[\\begin{gathered}\n2b + 2h=20\\\\\n2b = 20 -2h\\\\\nb = \\frac{20-2h}{2}\\\\\nb = 10-h\n\\end{gathered}\\]\nAhora lo sustituimos en la función:\n\\[\\begin{gathered}\nA(b,h) = b\\cdot h\\\\\nA(h) = (10-h)\\cdot h\\\\\nA(h) = -h^2 + 10h\n\\end{gathered}\\]\nEncontramos el mínimo\n\\[\\begin{gathered}\nA(h) = -h^2 + 10h\\\\\nA'(h) = -2h+10\\\\\nA'(h) = 0\\\\\n-2h+10 = 0\\\\\n-2h = -10\\\\\nh = \\frac{-10}{-2}\\\\\nh = 5\n\\end{gathered}\\]\nY una vez tenemos \\(\\large h\\), conseguimos \\(\\large b\\):\n\\[\\begin{gathered}\nb = 10 -h\\\\\nb = 10 - 5\\\\\nb = 5\n\\end{gathered}\\]\nAsí conseguimos \\(\\large h=5, b=5\\), es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm."
   }
 ]
