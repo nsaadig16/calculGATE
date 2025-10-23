@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "contents/puntos_criticos.html",
+    "href": "contents/puntos_criticos.html",
+    "title": "Puntos críticos",
+    "section": "",
+    "text": "Aquí se detallará como encontrar y analizar los puntos críticos de una función.\nSe usará como ejemplo la función \\(\\large f(x,y)=2x^3+2x^2y+xy^2-3x\\)"
+  },
+  {
+    "objectID": "contents/puntos_criticos.html#derivadas-parciales",
+    "href": "contents/puntos_criticos.html#derivadas-parciales",
+    "title": "Puntos críticos",
+    "section": "1 Derivadas parciales",
+    "text": "1 Derivadas parciales\nEl primer paso es hacer las derivadas parciales de la función \\(\\large f(x,y)\\).\nLa derivada parcial sobre \\(\\large x\\) de una función \\(\\large f(x,y)\\) es la función derivada sobre la variable \\(\\large x\\) manteniendo la variable \\(\\large y\\) como constante.\nEjemplo: \\[\n\\begin{gathered}\n\\large\n\\frac{\\partial f}{\\partial x}=D_x=6x^2+4xy+y^2-3\\\\\\\\\n\\large\n\\frac{\\partial f}{\\partial y}=D_y=2x^2+2xy\n\\end{gathered}\n\\]"
+  },
+  {
+    "objectID": "contents/puntos_criticos.html#encontrar-puntos-críticos",
+    "href": "contents/puntos_criticos.html#encontrar-puntos-críticos",
+    "title": "Puntos críticos",
+    "section": "2 Encontrar puntos críticos",
+    "text": "2 Encontrar puntos críticos\nUn punto será crítico cuando las derivadas parciales en ese punto sean igual a 0. Veamos el ejemplo:\n\\[\n\\begin{cases}\n6x^2+4xy+y^2-3 = 0\\\\\n2x^2+2xy=0\\\\\n\\end{cases}\n\\]\nSi ahora tomamos la segunda ecuación:\n\\[\n\\begin{gathered}\n2x^2+2xy=0\\\\\n2x\\cdot(x+y)=0\n\\begin{cases}\n2x=0\\longrightarrow x=0\\\\\nx+y=0\\longrightarrow x=-y\n\\end{cases}\n\\end{gathered}\n\\]\nVemos que hay puntos críticos cuando \\(x=0\\) o \\(x=-y\\). Vamos a ver que valores toma \\(y\\) en estos puntos sustituyendo en las derivadas parciales.\n\\[\n\\begin{gathered}\n\\boxed{x=0}\\\\\n6x^2+4xy+y^2-3 = 0\\\\\n6\\cdot 0^2+4\\cdot 0\\cdot y+y^2-3 = 0\\\\\ny^2-3 = 0\\\\\ny=\\pm\\sqrt{3}\n\\end{gathered}\n\\]\n\\[\n\\begin{gathered}\n\\boxed{x=-y}\\\\\n6\\cdot (-y)^2+4\\cdot (-y)\\cdot y+y^2-3 = 0\\\\\n6y^2 - 4y^2 + y^2 -3 = 0\\\\\n3y^2-3=0\\\\\ny^2=\\frac{3}{3}\\\\\ny=\\pm \\sqrt{1} = \\pm 1  \n\\end{gathered}\n\\]\nObtenemos en esta última que \\(y=\\pm 1\\), entonces como que \\(x=-y\\) entonces \\(x=\\mp 1\\).\nPor lo tanto, obtenemos que existen puntos críticos en:\n\n\\(\\large (0,\\sqrt 3)\\)\n\\(\\large (0,-\\sqrt 3)\\)\n\\(\\large (1,-1)\\)\n\\(\\large (-1,1)\\)"
+  },
+  {
+    "objectID": "contents/puntos_criticos.html#definir-los-puntos-críticos",
+    "href": "contents/puntos_criticos.html#definir-los-puntos-críticos",
+    "title": "Puntos críticos",
+    "section": "3 Definir los puntos críticos",
+    "text": "3 Definir los puntos críticos\nPara definir de qué tipo es un punto crítico, deberemos construir la matriz Hessiana. Para eso necesitaremos las segundas derivadas parciales.\n\n3.1 Segundas derivadas parciales\nDadas las derivadas parciales \\(D_x\\) y \\(D_y\\), las segundas derivadas parciales se obtienen volviendo a derivar parcialmente cada una sobre ambas variables. Conseguiremos:\n\n\\(D_{xx}\\), resultado de derivar \\(D_x\\) sobre \\(x\\)\n\\(D_{xy}\\), resultado de derivar \\(D_x\\) sobre \\(y\\)\n\\(D_{yx}\\), resultado de derivar \\(D_y\\) sobre \\(x\\) (da el mismo resultado que la anterior)\n\\(D_{yy}\\), resultado de derivar \\(D_y\\) sobre \\(y\\)\n\nAhora montamos la matriz Hessiana (\\(H\\)) de esta forma:\n\\[\n\\large\n\\begin{pmatrix}\nD_{xx} & D_{xy} \\\\\nD_{yx} & D_{yy}\n\\end{pmatrix}\n\\]\n\n\n3.2 Definiciones a partir de la matriz Hessiana\nPara observar un punto \\((x,y)\\) hay que sustituir los valores en las derivadas parciales. Para definir qué tipo de punto crítico es, hay que observar dos valores: el determinante de la matriz Hessiana \\(|H|\\) y el elemento \\(\\large D_{xx}\\).\nEl determinante se consigue con la operación \\(|H| = D_{xx}\\cdot D_{yy} - D_{xy}\\cdot D{yx}\\).\nDados estos valores, podemos observar la siguiente tabla:\n\n\n\n\\(\\large|H|\\)\n\\(D_{xx}\\)\nTipo de punto\n\n\n\n\n\\(0\\)\n\nInconcluso\n\n\n\\(-\\)\n\nPunto de silla\n\n\n\\(+\\)\n\\(+\\)\nMínimo relativo\n\n\n\\(+\\)\n\\(-\\)\nMáximo relativo\n\n\n\\(+\\)\n\\(0\\)\nPunto de silla\n\n\n\nY observando los signos podremos saber qué tipo de punto crítico es."
+  },
+  {
     "objectID": "contents/analisis.html",
     "href": "contents/analisis.html",
     "title": "Análisis de funciones",
@@ -67,7 +95,7 @@
     "href": "index.html",
     "title": "Cálculo GATE",
     "section": "",
-    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-23\n\n\nPuntos críticos\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contents/optimizacion.html",

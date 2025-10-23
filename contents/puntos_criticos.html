@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Naïm Saadi">
-<meta name="dcterms.date" content="2025-10-17">
+<meta name="dcterms.date" content="2025-10-23">
 
-<title>Optimización – CálculoGATE</title>
+<title>Puntos críticos – CálculoGATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,11 +130,11 @@ window.Quarto = {
 <span class="menu-text">Análisis de funciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../contents/optimizacion.html" aria-current="page"> 
+    <a class="nav-link" href="../contents/optimizacion.html"> 
 <span class="menu-text">Optimización</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../contents/puntos_criticos.html"> 
+    <a class="nav-link active" href="../contents/puntos_criticos.html" aria-current="page"> 
 <span class="menu-text">Puntos críticos</span></a>
   </li>  
 </ul>
@@ -156,21 +156,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#elementos-de-un-problema" id="toc-elementos-de-un-problema" class="nav-link active" data-scroll-target="#elementos-de-un-problema"><span class="header-section-number">1</span> Elementos de un problema</a>
+  <li><a href="#derivadas-parciales" id="toc-derivadas-parciales" class="nav-link active" data-scroll-target="#derivadas-parciales"><span class="header-section-number">1</span> Derivadas parciales</a></li>
+  <li><a href="#encontrar-puntos-críticos" id="toc-encontrar-puntos-críticos" class="nav-link" data-scroll-target="#encontrar-puntos-críticos"><span class="header-section-number">2</span> Encontrar puntos críticos</a></li>
+  <li><a href="#definir-los-puntos-críticos" id="toc-definir-los-puntos-críticos" class="nav-link" data-scroll-target="#definir-los-puntos-críticos"><span class="header-section-number">3</span> Definir los puntos críticos</a>
   <ul class="collapse">
-  <li><a href="#sec-variables" id="toc-sec-variables" class="nav-link" data-scroll-target="#sec-variables"><span class="header-section-number">1.1</span> Variables</a></li>
-  <li><a href="#sec-info" id="toc-sec-info" class="nav-link" data-scroll-target="#sec-info"><span class="header-section-number">1.2</span> Información previa</a></li>
-  <li><a href="#sec-func" id="toc-sec-func" class="nav-link" data-scroll-target="#sec-func"><span class="header-section-number">1.3</span> Función a minimizar o maximizar</a></li>
+  <li><a href="#segundas-derivadas-parciales" id="toc-segundas-derivadas-parciales" class="nav-link" data-scroll-target="#segundas-derivadas-parciales"><span class="header-section-number">3.1</span> Segundas derivadas parciales</a></li>
+  <li><a href="#definiciones-a-partir-de-la-matriz-hessiana" id="toc-definiciones-a-partir-de-la-matriz-hessiana" class="nav-link" data-scroll-target="#definiciones-a-partir-de-la-matriz-hessiana"><span class="header-section-number">3.2</span> Definiciones a partir de la matriz Hessiana</a></li>
   </ul></li>
-  <li><a href="#resolución-del-problema" id="toc-resolución-del-problema" class="nav-link" data-scroll-target="#resolución-del-problema"><span class="header-section-number">2</span> Resolución del problema</a>
-  <ul class="collapse">
-  <li><a href="#obtener-la-función-a-minimizarmaximizar" id="toc-obtener-la-función-a-minimizarmaximizar" class="nav-link" data-scroll-target="#obtener-la-función-a-minimizarmaximizar"><span class="header-section-number">2.1</span> Obtener la función a minimizar/maximizar:</a></li>
-  <li><a href="#sec-ec" id="toc-sec-ec" class="nav-link" data-scroll-target="#sec-ec"><span class="header-section-number">2.2</span> Encontrar la equivalencia entre las dos variables:</a></li>
-  <li><a href="#expresar-la-función-con-una-única-variable" id="toc-expresar-la-función-con-una-única-variable" class="nav-link" data-scroll-target="#expresar-la-función-con-una-única-variable"><span class="header-section-number">2.3</span> Expresar la función con una única variable:</a></li>
-  <li><a href="#encontrar-para-que-valor-la-función-es-máximamínima" id="toc-encontrar-para-que-valor-la-función-es-máximamínima" class="nav-link" data-scroll-target="#encontrar-para-que-valor-la-función-es-máximamínima"><span class="header-section-number">2.4</span> Encontrar para que valor la función es máxima/mínima</a></li>
-  <li><a href="#encontrar-el-otro-valor-con-la-ecuación" id="toc-encontrar-el-otro-valor-con-la-ecuación" class="nav-link" data-scroll-target="#encontrar-el-otro-valor-con-la-ecuación"><span class="header-section-number">2.5</span> Encontrar el otro valor con la ecuación</a></li>
-  </ul></li>
-  <li><a href="#ejercicio-de-ejemplo" id="toc-ejercicio-de-ejemplo" class="nav-link" data-scroll-target="#ejercicio-de-ejemplo"><span class="header-section-number">3</span> Ejercicio de ejemplo</a></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +171,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Optimización</h1>
+<h1 class="title">Puntos críticos</h1>
 </div>
 
 
@@ -196,7 +188,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-10-17</p>
+      <p class="date">2025-10-23</p>
     </div>
   </div>
   
@@ -208,100 +200,136 @@ window.Quarto = {
 </header>
 
 
-<p>Aquí encontraréis una guía de como resolver problemas de optimización.</p>
-<section id="elementos-de-un-problema" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="elementos-de-un-problema"><span class="header-section-number">1</span> Elementos de un problema</h2>
-<p>En un problema de optimización, solemos encontrar los siguientes elementos:</p>
-<section id="sec-variables" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="sec-variables"><span class="header-section-number">1.1</span> Variables</h3>
-<p>En los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos <strong>variables</strong>, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.</p>
+<p>Aquí se detallará como encontrar y analizar los puntos críticos de una función.</p>
+<p>Se usará como ejemplo la función <span class="math inline">\(\large f(x,y)=2x^3+2x^2y+xy^2-3x\)</span></p>
+<section id="derivadas-parciales" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="derivadas-parciales"><span class="header-section-number">1</span> Derivadas parciales</h2>
+<p>El primer paso es hacer las derivadas parciales de la función <span class="math inline">\(\large f(x,y)\)</span>.</p>
+<p>La derivada parcial sobre <span class="math inline">\(\large x\)</span> de una función <span class="math inline">\(\large f(x,y)\)</span> es la función derivada sobre la variable <span class="math inline">\(\large x\)</span> manteniendo la variable <span class="math inline">\(\large y\)</span> como constante.</p>
+<p><em>Ejemplo</em>: <span class="math display">\[
+\begin{gathered}
+\large
+\frac{\partial f}{\partial x}=D_x=6x^2+4xy+y^2-3\\\\
+\large
+\frac{\partial f}{\partial y}=D_y=2x^2+2xy
+\end{gathered}
+\]</span></p>
 </section>
-<section id="sec-info" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sec-info"><span class="header-section-number">1.2</span> Información previa</h3>
-<p>Para poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de <strong>información previa</strong> para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de <strong>ecuación</strong>.</p>
-</section>
-<section id="sec-func" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="sec-func"><span class="header-section-number">1.3</span> Función a minimizar o maximizar</h3>
-<p>Para acabar, debemos tener una <strong>función</strong> o <strong>cualidad</strong> del problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos <a href="#sec-variables">variables</a>.</p>
-</section>
-</section>
-<section id="resolución-del-problema" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="resolución-del-problema"><span class="header-section-number">2</span> Resolución del problema</h2>
-<p>Se puede resolver un problema de optimización siguiendo estos pasos:</p>
-<section id="obtener-la-función-a-minimizarmaximizar" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="obtener-la-función-a-minimizarmaximizar"><span class="header-section-number">2.1</span> Obtener la <a href="#sec-func">función a minimizar/maximizar</a>:</h3>
-<p>Dadas las variables <span class="math inline">\(\large a\)</span> y <span class="math inline">\(\large b\)</span>, debemos formar la función <span class="math inline">\(\large f(a,b)\)</span> de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables.</p>
-</section>
-<section id="sec-ec" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="sec-ec"><span class="header-section-number">2.2</span> Encontrar la equivalencia entre las dos variables:</h3>
-<p>Debemos expresar <span class="math inline">\(\large a\)</span> en función de <span class="math inline">\(\large b\)</span>, o por lo contrario, <span class="math inline">\(\large b\)</span> en función de <span class="math inline">\(\large a\)</span>, usando la <a href="#sec-info">información previa</a>.</p>
-</section>
-<section id="expresar-la-función-con-una-única-variable" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="expresar-la-función-con-una-única-variable"><span class="header-section-number">2.3</span> Expresar la función con una única variable:</h3>
-<p>Ahora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado <span class="math inline">\(\large a\)</span>, la sustituimos en la función de forma que <span class="math inline">\(\large f(a,b)\)</span> pase a ser <span class="math inline">\(\large f(b)\)</span>.</p>
-</section>
-<section id="encontrar-para-que-valor-la-función-es-máximamínima" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="encontrar-para-que-valor-la-función-es-máximamínima"><span class="header-section-number">2.4</span> Encontrar para que valor la función es máxima/mínima</h3>
-<p>Una vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0 (ver <a href="../contents/analisis.html#sec-extremos">aquí</a>). Si nos dan más de dos valores, comprobad si son máximos o mínimos y que concuerde con el enunciado.</p>
-</section>
-<section id="encontrar-el-otro-valor-con-la-ecuación" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="encontrar-el-otro-valor-con-la-ecuación"><span class="header-section-number">2.5</span> Encontrar el otro valor con la <a href="#sec-info">ecuación</a></h3>
-<p>Ahora que ya tenemos una de las dos <a href="#sec-variables">variables</a>, solo hace falta sustituirla en la ecuación que hemos obtenido en el paso <a href="#sec-ec" class="quarto-xref">2.2</a>, y de esta forma ya obtendremos las dos dimensiones.</p>
-</section>
-</section>
-<section id="ejercicio-de-ejemplo" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="ejercicio-de-ejemplo"><span class="header-section-number">3</span> Ejercicio de ejemplo</h2>
-<blockquote class="blockquote">
-<p>De todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?</p>
-</blockquote>
-<p>Obtenemos lo siguiente:</p>
+<section id="encontrar-puntos-críticos" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="encontrar-puntos-críticos"><span class="header-section-number">2</span> Encontrar puntos críticos</h2>
+<p>Un punto será crítico cuando las derivadas parciales en ese punto sean igual a 0. Veamos el <em>ejemplo</em>:</p>
+<p><span class="math display">\[
+\begin{cases}
+6x^2+4xy+y^2-3 = 0\\
+2x^2+2xy=0\\
+\end{cases}
+\]</span></p>
+<p>Si ahora tomamos la segunda ecuación:</p>
+<p><span class="math display">\[
+\begin{gathered}
+2x^2+2xy=0\\
+2x\cdot(x+y)=0
+\begin{cases}
+2x=0\longrightarrow x=0\\
+x+y=0\longrightarrow x=-y
+\end{cases}
+\end{gathered}
+\]</span></p>
+<p>Vemos que hay puntos críticos cuando <span class="math inline">\(x=0\)</span> o <span class="math inline">\(x=-y\)</span>. Vamos a ver que valores toma <span class="math inline">\(y\)</span> en estos puntos sustituyendo en las derivadas parciales.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\boxed{x=0}\\
+6x^2+4xy+y^2-3 = 0\\
+6\cdot 0^2+4\cdot 0\cdot y+y^2-3 = 0\\
+y^2-3 = 0\\
+y=\pm\sqrt{3}
+\end{gathered}
+\]</span></p>
+<p><span class="math display">\[
+\begin{gathered}
+\boxed{x=-y}\\
+6\cdot (-y)^2+4\cdot (-y)\cdot y+y^2-3 = 0\\
+6y^2 - 4y^2 + y^2 -3 = 0\\
+3y^2-3=0\\
+y^2=\frac{3}{3}\\
+y=\pm \sqrt{1} = \pm 1  
+\end{gathered}
+\]</span></p>
+<p>Obtenemos en esta última que <span class="math inline">\(y=\pm 1\)</span>, entonces como que <span class="math inline">\(x=-y\)</span> entonces <span class="math inline">\(x=\mp 1\)</span>.</p>
+<p>Por lo tanto, obtenemos que existen puntos críticos en:</p>
 <ul>
-<li>Variables:
-<ul>
-<li><span class="math inline">\(\large b\)</span>: base del rectángulo</li>
-<li><span class="math inline">\(\large h\)</span>: altura del rectángulo</li>
-</ul></li>
-<li>Información previa:
-<ul>
-<li>El perímetro es 20cm, por lo tanto: <span class="math inline">\(\large 2b + 2h = 20\)</span></li>
-</ul></li>
-<li>Función a maximizar:
-<ul>
-<li>Área, por lo tanto: <span class="math inline">\(\large A(b,h) = b\cdot h\)</span></li>
-</ul></li>
+<li><span class="math inline">\(\large (0,\sqrt 3)\)</span></li>
+<li><span class="math inline">\(\large (0,-\sqrt 3)\)</span></li>
+<li><span class="math inline">\(\large (1,-1)\)</span></li>
+<li><span class="math inline">\(\large (-1,1)\)</span></li>
 </ul>
-<p>Encontramos la ecuación:</p>
-<p><span class="math display">\[\begin{gathered}
-2b + 2h=20\\
-2b = 20 -2h\\
-b = \frac{20-2h}{2}\\
-b = 10-h
-\end{gathered}\]</span></p>
-<p>Ahora lo sustituimos en la función:</p>
-<p><span class="math display">\[\begin{gathered}
-A(b,h) = b\cdot h\\
-A(h) = (10-h)\cdot h\\
-A(h) = -h^2 + 10h
-\end{gathered}\]</span></p>
-<p>Encontramos el mínimo</p>
-<p><span class="math display">\[\begin{gathered}
-A(h) = -h^2 + 10h\\
-A'(h) = -2h+10\\
-A'(h) = 0\\
--2h+10 = 0\\
--2h = -10\\
-h = \frac{-10}{-2}\\
-h = 5
-\end{gathered}\]</span></p>
-<p>Y una vez tenemos <span class="math inline">\(\large h\)</span>, conseguimos <span class="math inline">\(\large b\)</span>:</p>
-<p><span class="math display">\[\begin{gathered}
-b = 10 -h\\
-b = 10 - 5\\
-b = 5
-\end{gathered}\]</span></p>
-<p>Así conseguimos <span class="math inline">\(\large h=5, b=5\)</span>, es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm.</p>
+</section>
+<section id="definir-los-puntos-críticos" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="definir-los-puntos-críticos"><span class="header-section-number">3</span> Definir los puntos críticos</h2>
+<p>Para definir de qué tipo es un punto crítico, deberemos construir la matriz Hessiana. Para eso necesitaremos las segundas derivadas parciales.</p>
+<section id="segundas-derivadas-parciales" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="segundas-derivadas-parciales"><span class="header-section-number">3.1</span> Segundas derivadas parciales</h3>
+<p>Dadas las derivadas parciales <span class="math inline">\(D_x\)</span> y <span class="math inline">\(D_y\)</span>, las segundas derivadas parciales se obtienen volviendo a derivar parcialmente cada una sobre ambas variables. Conseguiremos:</p>
+<ul>
+<li><span class="math inline">\(D_{xx}\)</span>, resultado de derivar <span class="math inline">\(D_x\)</span> sobre <span class="math inline">\(x\)</span></li>
+<li><span class="math inline">\(D_{xy}\)</span>, resultado de derivar <span class="math inline">\(D_x\)</span> sobre <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(D_{yx}\)</span>, resultado de derivar <span class="math inline">\(D_y\)</span> sobre <span class="math inline">\(x\)</span> (da el mismo resultado que la anterior)</li>
+<li><span class="math inline">\(D_{yy}\)</span>, resultado de derivar <span class="math inline">\(D_y\)</span> sobre <span class="math inline">\(y\)</span></li>
+</ul>
+<p>Ahora montamos la matriz Hessiana (<span class="math inline">\(H\)</span>) de esta forma:</p>
+<p><span class="math display">\[
+\large
+\begin{pmatrix}
+D_{xx} &amp; D_{xy} \\
+D_{yx} &amp; D_{yy}
+\end{pmatrix}
+\]</span></p>
+</section>
+<section id="definiciones-a-partir-de-la-matriz-hessiana" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="definiciones-a-partir-de-la-matriz-hessiana"><span class="header-section-number">3.2</span> Definiciones a partir de la matriz Hessiana</h3>
+<p>Para observar un punto <span class="math inline">\((x,y)\)</span> hay que sustituir los valores en las derivadas parciales. Para definir qué tipo de punto crítico es, hay que observar dos valores: el determinante de la matriz Hessiana <span class="math inline">\(|H|\)</span> y el elemento <span class="math inline">\(\large D_{xx}\)</span>.</p>
+<p>El determinante se consigue con la operación <span class="math inline">\(|H| = D_{xx}\cdot D_{yy} - D_{xy}\cdot D{yx}\)</span>.</p>
+<p>Dados estos valores, podemos observar la siguiente tabla:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\large|H|\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(D_{xx}\)</span></th>
+<th style="text-align: center;">Tipo de punto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Inconcluso</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Punto de silla</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;">Mínimo relativo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;">Máximo relativo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;">Punto de silla</td>
+</tr>
+</tbody>
+</table>
+<p>Y observando los signos podremos saber qué tipo de punto crítico es.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
