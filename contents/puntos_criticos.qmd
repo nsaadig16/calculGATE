@@ -1,0 +1,131 @@
+---
+title: "Puntos críticos"
+date: "2025-10-23"
+date-format: "YYYY-MM-DD"
+number-sections: true
+author:
+    - name: "Naïm Saadi"
+      email: "nsaadig16@gmail.com"
+---
+
+Aquí se detallará como encontrar y analizar los puntos críticos de una función.
+
+Se usará como ejemplo la función $\large f(x,y)=2x^3+2x^2y+xy^2-3x$
+
+## Derivadas parciales
+
+El primer paso es hacer las derivadas parciales de la función $\large f(x,y)$. 
+
+La derivada parcial sobre $\large x$ de una función $\large f(x,y)$ es la función derivada sobre la variable $\large x$ manteniendo
+la variable $\large y$ como constante.
+
+*Ejemplo*:
+$$
+\begin{gathered}
+\large
+\frac{\partial f}{\partial x}=D_x=6x^2+4xy+y^2-3\\\\
+\large
+\frac{\partial f}{\partial y}=D_y=2x^2+2xy
+\end{gathered}
+$$
+
+## Encontrar puntos críticos
+
+Un punto será crítico cuando las derivadas parciales en ese punto sean igual a 0.
+Veamos el *ejemplo*:
+
+$$
+\begin{cases}
+6x^2+4xy+y^2-3 = 0\\
+2x^2+2xy=0\\
+\end{cases}
+$$
+
+Si ahora tomamos la segunda ecuación:
+
+$$
+\begin{gathered}
+2x^2+2xy=0\\
+2x\cdot(x+y)=0
+\begin{cases}
+2x=0\longrightarrow x=0\\
+x+y=0\longrightarrow x=-y
+\end{cases}
+\end{gathered}
+$$
+
+Vemos que hay puntos críticos cuando $x=0$ o $x=-y$. Vamos a ver que valores toma $y$ en estos puntos sustituyendo 
+en las derivadas parciales.
+
+$$
+\begin{gathered}
+\boxed{x=0}\\
+6x^2+4xy+y^2-3 = 0\\
+6\cdot 0^2+4\cdot 0\cdot y+y^2-3 = 0\\
+y^2-3 = 0\\
+y=\pm\sqrt{3}
+\end{gathered}
+$$
+
+$$
+\begin{gathered}
+\boxed{x=-y}\\
+6\cdot (-y)^2+4\cdot (-y)\cdot y+y^2-3 = 0\\
+6y^2 - 4y^2 + y^2 -3 = 0\\
+3y^2-3=0\\
+y^2=\frac{3}{3}\\
+y=\pm \sqrt{1} = \pm 1  
+\end{gathered}
+$$
+
+Obtenemos en esta última que $y=\pm 1$, entonces como que $x=-y$ entonces $x=\mp 1$.
+
+Por lo tanto, obtenemos que existen puntos críticos en:
+
+- $\large (0,\sqrt 3)$
+- $\large (0,-\sqrt 3)$
+- $\large (1,-1)$
+- $\large (-1,1)$
+
+## Definir los puntos críticos
+
+Para definir de qué tipo es un punto crítico, deberemos construir la matriz Hessiana. Para eso necesitaremos las segundas derivadas parciales.
+
+### Segundas derivadas parciales
+
+Dadas las derivadas parciales $D_x$ y $D_y$, las segundas derivadas parciales se obtienen volviendo a derivar parcialmente
+cada una sobre ambas variables. Conseguiremos:
+
+- $D_{xx}$, resultado de derivar $D_x$ sobre $x$
+- $D_{xy}$, resultado de derivar $D_x$ sobre $y$
+- $D_{yx}$, resultado de derivar $D_y$ sobre $x$ (da el mismo resultado que la anterior)
+- $D_{yy}$, resultado de derivar $D_y$ sobre $y$
+
+Ahora montamos la matriz Hessiana ($H$) de esta forma:
+
+$$
+\large
+\begin{pmatrix}
+D_{xx} & D_{xy} \\
+D_{yx} & D_{yy}
+\end{pmatrix}
+$$
+
+### Definiciones a partir de la matriz Hessiana
+
+Para observar un punto $(x,y)$ hay que sustituir los valores en las derivadas parciales.
+Para definir qué tipo de punto crítico es, hay que observar dos valores: el determinante de la matriz Hessiana $|H|$ y el elemento $\large D_{xx}$. 
+
+El determinante se consigue con la operación $|H| = D_{xx}\cdot D_{yy} - D_{xy}\cdot D{yx}$.
+
+Dados estos valores, podemos observar la siguiente tabla:
+
+| $\large|H|$ | $D_{xx}$ | Tipo de punto|
+|:-----------:|:--------:|:------------:|
+| $0$         |          | Inconcluso   |
+| $-$         |          |Punto de silla|
+|   $+$       |$+$       |Mínimo relativo|
+|  $+$        |$-$       |Máximo relativo|
+|   $+$       |$0$       |Punto de silla|
+
+Y observando los signos podremos saber qué tipo de punto crítico es.

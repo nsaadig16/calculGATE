@@ -5,7 +5,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "Se ha añadido la página [optimización](/contents/optimizacion.qmd)."
+    content: "Se ha añadido la página [puntos críticos](/contents/puntos_criticos.qmd)."
     type: info
     position: below-navbar
   title: "CálculoGATE"
@@ -21,6 +21,8 @@ website:
         text: Análisis de funciones
       - href: contents/optimizacion.qmd
         text: Optimización
+      - href: contents/puntos_criticos.qmd
+        text: Puntos críticos
 
 format:
   html:
