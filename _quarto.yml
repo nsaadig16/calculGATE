@@ -19,6 +19,8 @@ website:
     left:
       - href: contents/analisis.qmd
         text: Análisis de funciones
+      - href: contents/optimizacion.qmd
+        text: Optimización
 
 format:
   html:
