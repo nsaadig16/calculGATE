@@ -65,3 +65,79 @@ Para encontrar los valores $\omega_0$ y $\omega_1$, llamados **pesos** para todo
 2. Encontrar $\lambda$ ecuaciones suponiendo que $f(x)\equiv \{x^1,\dots,x^\lambda\}$.
 3. A partir de las ecuaciones, conseguir los pesos $\omega_0$ y $\omega_1$. 
 :::
+
+## Ejemplo
+
+:::{.fragment}
+Vamos a ver el ejercicio 1 del Parcial 2 de enero de 2024:
+:::
+:::{.fragment}
+*Consideremos la siguiente fórmula de integración aproximada, donde $\alpha$ es un valor real tal que $0 < \alpha < 1$.*
+:::
+:::{.fragment}
+$$
+\int_0^1 f(x)~dx \approx \omega_0 f(0) + \omega_1 f(\alpha)
+$$
+:::
+
+:::{.fragment .italic}
+*a) Determina los valores de los pesos $\omega_0$ y $\omega_1$ para que la fórmula anterior sea exacta para todos los polinomios $f(x)$ de grado menor o igual que 1. El resultado depende de $\alpha$.*
+:::
+
+## Ejemplo (a)
+
+:::{.fragment}
+*1. Encontrar una ecuación suponiendo que $f(x)\equiv 1$.*
+Cambiamos $f(x)$ en la fórmula por 1, sustituyendo $\approx$ por $=$:
+:::
+
+:::{.fragment .equation}
+$$
+\begin{gather}
+\int_0^1 1~dx = \omega_0\cdot 1+\omega_1\cdot1\\\\
+1\cdot \big[x  \big]_0^1 = \omega_0+\omega_1\\\\
+1=\omega_0+\omega_1\label{1}\tag{i}
+\end{gather}
+$$
+:::
+
+## Ejemplo (a)
+
+:::{.fragment}
+*2. Encontrar $\lambda$ ecuaciones suponiendo que $\small f(x)\equiv \{x^1,\dots,x^\lambda\}$.*
+En nuestro caso, $\lambda=1$, por lo tanto sustituimos $f(x)$ por $x$:
+:::
+
+:::{.fragment}
+$$
+\begin{gather}\small
+\int_0^1 x~dx = \omega_0 \cdot 0 + \omega_1 \cdot\alpha\\\small
+\left[\tfrac{x^2}{2}\right]_0^1=\omega_1\cdot \alpha\\\small
+\tfrac{1}{2} = \omega_1\cdot\alpha\\\small
+\omega_1=\tfrac{1}{2\alpha}
+\end{gather}
+$$
+:::
+
+## Ejemplo (a)
+:::{.fragment}
+*3. A partir de las ecuaciones, conseguir los pesos $\omega_0$ y $\omega_1$*:
+:::
+
+:::{.fragment}
+Ahora que tenemos $\omega_1$, podemos encontrar $\omega_0$ con la ecuación $\eqref{1}$:
+:::
+
+:::{.fragment}
+$$
+\begin{gather}
+1=\omega_0+\omega_1\\
+1-\omega_1=\omega_0\\
+1-\tfrac{1}{2\alpha} = \omega_0
+\end{gather}
+$$
+:::
+
+:::{.fragment}
+Obteniendo así  $\small\omega_0 = 1 - \tfrac{1}{2\alpha}$  y  $\small\omega_1 = \tfrac{1}{2\alpha}$. 
+:::
