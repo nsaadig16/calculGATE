@@ -23,6 +23,8 @@ website:
         text: Optimización
       - href: contents/puntos_criticos.qmd
         text: Puntos críticos
+      - href: contents/aproximacion_integrales.qmd
+        text: Aproximación de integrales
 
 format:
   html:

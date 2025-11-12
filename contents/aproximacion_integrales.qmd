@@ -1,0 +1,67 @@
+---
+title: "Aproximación de integrales"
+date: "2025-11-11"
+date-format: "YYYY-MM-DD"
+number-sections: true
+format: revealjs
+author:
+    - name: "Naïm Saadi"
+      email: "nsaadig16@gmail.com"
+---
+
+## Aproximación de integrales
+
+:::{.fragment}
+En este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas. Se puede hacer mediante la **fórmula de Simpson**, la **regla de los trapecios** o el **método de los coeficientes indeterminados**.
+:::
+
+## Regla de los trapecios
+
+:::{.fragment}
+La regla de los trapecios aproxima una integral de una función $f(x)$ de esta manera:
+:::
+
+:::{.fragment}
+$$
+\int_a^b f(x) \approx \frac{b-a}{2}\left(f(a) + f(b)\right)
+$$
+:::
+
+## Fórmula de Simpson
+
+:::{.fragment}
+La fórmula de Simpson aproxima una integral de una función $f(x)$ de esta manera:
+:::
+:::{.fragment}
+$$
+\int_a^b f(x) \approx \frac{b-a}{6} \left(f(a)+4 f\left(\frac{a+b}{2}\right)+f(b)\right)
+$$
+:::
+
+## Método de los coeficientes indeterminados
+
+:::{.fragment}
+El método de los coeficientes indeterminados aproxima una integral de una función $f(x)$ así: 
+:::
+
+:::{.fragment}
+$$
+\int_a^b f(x) \approx \omega_0 f(k_1) + \omega_1 f(k_2)
+$$
+:::
+
+:::{.callout-note title="Info" .fragment}
+En el ejercicio nos tienen que dar los valores de $k_1$ y $k_2$ para usar este método.
+:::
+
+## Método de los coeficientes indeterminados
+
+:::{.fragment}
+Para encontrar los valores $\omega_0$ y $\omega_1$, llamados **pesos** para todos los polinomios de grado menor o igual que $\lambda$, hay que seguir los siguientes pasos:
+:::
+
+:::{.incremental}
+1. Encontrar una ecuación suponiendo que $f(x)\equiv 1$.
+2. Encontrar $\lambda$ ecuaciones suponiendo que $f(x)\equiv \{x^1,\dots,x^\lambda\}$.
+3. A partir de las ecuaciones, conseguir los pesos $\omega_0$ y $\omega_1$. 
+:::

@@ -2,6 +2,7 @@
 title: "Cálculo GATE"
 listing:
     sort-ui: false
+    sort: date desc
     filter-ui: false
     type: table
     date-format: "YYYY-MM-DD"
