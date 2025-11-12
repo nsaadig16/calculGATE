@@ -95,7 +95,42 @@
     "href": "index.html",
     "title": "Cálculo GATE",
     "section": "",
-    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-23\n\n\nPuntos críticos\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-11-11\n\n\nAproximación de integrales\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-23\n\n\nPuntos críticos\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#aproximación-de-integrales",
+    "href": "contents/aproximacion_integrales.html#aproximación-de-integrales",
+    "title": "Aproximación de integrales",
+    "section": "1 Aproximación de integrales",
+    "text": "1 Aproximación de integrales\n\nEn este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas. Se puede hacer mediante la fórmula de Simpson, la regla de los trapecios o el método de los coeficientes indeterminados."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#regla-de-los-trapecios",
+    "href": "contents/aproximacion_integrales.html#regla-de-los-trapecios",
+    "title": "Aproximación de integrales",
+    "section": "2 Regla de los trapecios",
+    "text": "2 Regla de los trapecios\n\nLa regla de los trapecios aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{2}\\left(f(a) + f(b)\\right)\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#fórmula-de-simpson",
+    "href": "contents/aproximacion_integrales.html#fórmula-de-simpson",
+    "title": "Aproximación de integrales",
+    "section": "3 Fórmula de Simpson",
+    "text": "3 Fórmula de Simpson\n\nLa fórmula de Simpson aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{6} \\left(f(a)+4 f\\left(\\frac{a+b}{2}\\right)+f(b)\\right)\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados",
+    "href": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados",
+    "title": "Aproximación de integrales",
+    "section": "4 Método de los coeficientes indeterminados",
+    "text": "4 Método de los coeficientes indeterminados\n\nEl método de los coeficientes indeterminados aproxima una integral de una función \\(f(x)\\) así:\n\n\n\\[\n\\int_a^b f(x) \\approx \\omega_0 f(k_1) + \\omega_1 f(k_2)\n\\]\n\n\n\n\n\n\n\n\nInfo\n\n\nEn el ejercicio nos tienen que dar los valores de \\(k_1\\) y \\(k_2\\) para usar este método."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados-1",
+    "href": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados-1",
+    "title": "Aproximación de integrales",
+    "section": "5 Método de los coeficientes indeterminados",
+    "text": "5 Método de los coeficientes indeterminados\n\nPara encontrar los valores \\(\\omega_0\\) y \\(\\omega_1\\), llamados pesos para todos los polinomios de grado menor o igual que \\(\\lambda\\), hay que seguir los siguientes pasos:\n\n\nEncontrar una ecuación suponiendo que \\(f(x)\\equiv 1\\).\nEncontrar \\(\\lambda\\) ecuaciones suponiendo que \\(f(x)\\equiv \\{x^1,\\dots,x^\\lambda\\}\\).\nA partir de las ecuaciones, conseguir los pesos \\(\\omega_0\\) y \\(\\omega_1\\)."
   },
   {
     "objectID": "contents/optimizacion.html",

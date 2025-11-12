@@ -2,9 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/contents/analisis.html",
+      "/contents/aproximacion_integrales.html",
+      "/contents/puntos_criticos.html",
       "/contents/optimizacion.html",
-      "/contents/puntos_criticos.html"
+      "/contents/analisis.html"
     ]
   }
 ]
