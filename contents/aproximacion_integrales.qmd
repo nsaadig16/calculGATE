@@ -2,8 +2,10 @@
 title: "Aproximación de integrales"
 date: "2025-11-11"
 date-format: "YYYY-MM-DD"
-number-sections: true
-format: revealjs
+number-sections: false
+format: 
+  revealjs:
+    transition: fade
 author:
     - name: "Naïm Saadi"
       email: "nsaadig16@gmail.com"
@@ -12,7 +14,9 @@ author:
 ## Aproximación de integrales
 
 :::{.fragment}
-En este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas. Se puede hacer mediante la **fórmula de Simpson**, la **regla de los trapecios** o el **método de los coeficientes indeterminados**.
+En este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas. 
+
+Se puede hacer mediante la **fórmula de Simpson**, la **regla de los trapecios** o el **método de los coeficientes indeterminados**.
 :::
 
 ## Regla de los trapecios
@@ -54,11 +58,9 @@ $$
 En el ejercicio nos tienen que dar los valores de $k_1$ y $k_2$ para usar este método.
 :::
 
-## Método de los coeficientes indeterminados
+## Método de los coeficientes indeterminados{ slide-number="false" }
 
-:::{.fragment}
-Para encontrar los valores $\omega_0$ y $\omega_1$, llamados **pesos** para todos los polinomios de grado menor o igual que $\lambda$, hay que seguir los siguientes pasos:
-:::
+Para encontrar los valores $\omega_0$ y $\omega_1$ (llamados **pesos**) para todos los polinomios de grado menor o igual que $\lambda$, hay que seguir los siguientes pasos:
 
 :::{.incremental}
 1. Encontrar una ecuación suponiendo que $f(x)\equiv 1$.
@@ -76,7 +78,7 @@ Vamos a ver el ejercicio 1 del Parcial 2 de enero de 2024:
 :::
 :::{.fragment}
 $$
-\int_0^1 f(x)~dx \approx \omega_0 f(0) + \omega_1 f(\alpha)
+\int_0^1 f(x)~\mathrm{d}x \approx \omega_0 f(0) + \omega_1 f(\alpha)
 $$
 :::
 
@@ -94,7 +96,7 @@ Cambiamos $f(x)$ en la fórmula por 1, sustituyendo $\approx$ por $=$:
 :::{.fragment .equation}
 $$
 \begin{gather}
-\int_0^1 1~dx = \omega_0\cdot 1+\omega_1\cdot1\\\\
+\int_0^1 1~\mathrm{d}x = \omega_0\cdot 1+\omega_1\cdot1\\\\
 1\cdot \big[x  \big]_0^1 = \omega_0+\omega_1\\\\
 1=\omega_0+\omega_1\label{1}\tag{i}
 \end{gather}
@@ -111,7 +113,7 @@ En nuestro caso, $\lambda=1$, por lo tanto sustituimos $f(x)$ por $x$:
 :::{.fragment}
 $$
 \begin{gather}\small
-\int_0^1 x~dx = \omega_0 \cdot 0 + \omega_1 \cdot\alpha\\\small
+\int_0^1 x~\mathrm{d}x = \omega_0 \cdot 0 + \omega_1 \cdot\alpha\\\small
 \left[\tfrac{x^2}{2}\right]_0^1=\omega_1\cdot \alpha\\\small
 \tfrac{1}{2} = \omega_1\cdot\alpha\\\small
 \omega_1=\tfrac{1}{2\alpha}
@@ -133,11 +135,152 @@ $$
 \begin{gather}
 1=\omega_0+\omega_1\\
 1-\omega_1=\omega_0\\
-1-\tfrac{1}{2\alpha} = \omega_0
+1-\tfrac{1}{2\alpha} = \omega_0 \label{2}\tag{ii}
 \end{gather}
 $$
 :::
 
 :::{.fragment}
 Obteniendo así  $\small\omega_0 = 1 - \tfrac{1}{2\alpha}$  y  $\small\omega_1 = \tfrac{1}{2\alpha}$. 
+:::
+
+## Ejemplo (b)
+
+:::{.fragment}
+*Determina el valor de $\alpha$ para que la fórmula anterior también sea exacta para todos los polinomios $f(x)$ de grado menor o igual a 2.*
+:::
+
+:::{.fragment}
+En este apartado, la $\lambda$ (grado máximo) pasa a ser 2, por lo tanto también deberemos valorar
+el caso $f(x)\equiv x^2$, sustituyendo $\omega_1$ usando $\eqref{1}$.
+:::
+
+## Ejemplo (b)
+
+:::{.fragment}
+$$
+\begin{gather}
+\int_0^1 x^2~\mathrm{d}x = \omega_0 \cdot 0^2 + \omega_1 \cdot\alpha^2\\
+\left[\tfrac{x^3}{3}\right]_0^1=\omega_1\cdot \alpha^2\\
+\tfrac 1 3 = \tfrac{1}{2\alpha}\cdot\alpha^2\\
+\tfrac 1 3 = \tfrac{\alpha}{2}\\
+\tfrac 2 3 = \alpha \label{3}\tag{iii}
+\end{gather}
+$$
+:::
+
+:::{.fragment}
+Por lo tanto, $\alpha = \tfrac 2 3$.
+:::
+
+## Ejemplo (c)
+
+:::{.fragment}
+*Usa la regla anterior y la regla de Simpson para aproximar el valor de la integral:*
+:::
+
+:::{.fragment}
+$$
+\int_0^1 \sqrt[3]{8-2x}~ \mathrm{d}x
+$$
+:::
+
+:::{.fragment}
+*¿Cuál da un error menor?*
+:::
+
+:::{.fragment}
+Ya que ahora tenemos el valor de $\alpha$, vamos a sustituirlo en la fórmula usando $\eqref{1}$, $\eqref{2}$ y $\eqref{3}$.
+:::
+
+## Ejemplo (c){.smaller}
+
+:::{.fragment}
+$$
+\begin{gather}
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x \approx \omega_0 f(0) + \omega_1 f(\alpha)\\
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x \approx (1-\tfrac{1}{2\alpha})\ \sqrt[3]{8-2\cdot 0} + (\tfrac{1}{2\alpha}) \sqrt[3]{8-2\cdot \alpha}\\
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x \approx (1-\tfrac{1}{2\tfrac 2 3})\ \cdot 2 + (\tfrac{1}{2\tfrac 2 3}) \sqrt[3]{8-2\cdot \tfrac 2 3}\\
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x\approx \tfrac 1 4 \cdot 2 + \tfrac 3 4 \cdot \sqrt[3]{\tfrac{20}{3}}\\
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x\approx 1.91155\dots
+\end{gather}
+$$
+:::
+
+:::{.fragment}
+Por lo tanto, usando la fórmula proporcionada, la integral da aproximadamente $\small 1.91155\dots$
+:::
+
+## Ejemplo (c){.smaller}
+
+:::{.fragment}
+Ahora calculemos usando la fórmula de Simpson.
+:::
+
+:::{.fragment}
+$$
+\begin{gather}
+\int_a^b f(x) \approx \frac{b-a}{6} \left(f(a)+4 f\left(\frac{a+b}{2}\right)+f(b)\right)\\
+\int_0^1 \sqrt[3]{8-2x}~ \mathrm{d}x\approx \frac{1-0}{6} \left(f(0)+4f\left(\frac{0+1}{2}\right)+f(1)\right)\\
+\int_0^1 \sqrt[3]{8-2x}~ \mathrm{d}x\approx \tfrac 1 6 \left(\sqrt[3]{8-2\cdot 0}+4\sqrt[3]{8-2\tfrac 1 2}+\sqrt[3]{8-2\cdot 1}\right)\\
+\int_0^1 \sqrt[3]{8-2x}~ \mathrm{d}x\approx \tfrac 1 6 \left(2+4\sqrt[3]{7}+\sqrt[3]{6}\right)\\
+\int_0^1 \sqrt[3]{8-2x}~ \mathrm{d}x\approx 1.91147\dots
+\end{gather}
+$$
+:::
+
+:::{.fragment}
+¿Pero cuál tiene un error menor? Para eso hay que calcular el valor exacto de la integral.
+:::
+
+## Ejemplo (c){.smaller}
+
+:::{.fragment}
+Usaremos cambio de variable para resolver esta integral:
+:::
+:::{.fragment}
+$$
+\begin{gather}
+\int_0^1 \sqrt[3]{8-2x}~\mathrm{d}x\\\\
+\small
+\boxed{u = 8-2x} \\
+\small
+\mathrm{d}u = -2\cdot \mathrm{d}x \longrightarrow \boxed{\mathrm{d}x = \frac{\mathrm{d}u}{-2}}\\\\
+\int_0^1 \sqrt[3]{u}~\frac{\mathrm{d}u}{-2}\\\\
+\end{gather}
+$$
+:::
+
+
+## Ejemplo (c){.smaller}
+
+Usaremos cambio de variable para resolver esta integral:
+
+$$
+\begin{gather}
+\int_0^1 \sqrt[3]{u}~\frac{\mathrm{d}u}{-2}\\
+\int_0^1 u^{\tfrac 1 3}~\frac{\mathrm{d}u}{-2}\\
+\left[\frac{u^{\tfrac 4 3}}{\tfrac 4 3}\cdot \frac{1}{-2}\right]_0^1\\
+\left[\frac{{3\cdot(8-2x)}^{\tfrac 4 3}}{-8}\right]_0^1 =\left[\frac{3\cdot\sqrt[3]{{(8-2x)}^4}}{-8}\right]_0^1 \\
+\end{gather}
+$$
+
+## Ejemplo (c){.smaller}
+
+Usaremos cambio de variable para resolver esta integral:
+
+$$
+\begin{gather}
+\left[\frac{3\cdot\sqrt[3]{{(8-2x)}^4}}{-8}\right]_0^1 = \frac{3\cdot(\sqrt[3]{(8-2\cdot 1)^4})}{-8} - \frac{3\cdot(\sqrt[3]{(8-2\cdot 0)^4})}{-8}\\
+\frac{-3\cdot \sqrt[3]{6^4}}{-8}-\frac{-3\cdot \sqrt[3]{8^4}}{-8} = 1.91148\dots\\
+\end{gather}
+$$
+
+
+:::{.fragment}
+Así que tenemos $\small 1.91155\dots$ (fórmula de los coeficientes indeterminados), $\small 1.91147\dots$ (regla de Simpson) y el valor exacto es $\small 1.91148\dots$. Calculamos el error de cada uno:
+
+ $\text{error}_{\text{f. coef. ind.}} = |1.91148\dots - 1.91155\dots| \approx 0.00007$, $\text{error}_{\text{f. Simpson}} = |1.91148\dots -  1.91147\dots| \approx 0.00001$
+
+Como el error es menor, podemos concluir que la mejor aproximación es la de la regla de Simpson.
 :::
