@@ -101,36 +101,120 @@
     "objectID": "contents/aproximacion_integrales.html#aproximación-de-integrales",
     "href": "contents/aproximacion_integrales.html#aproximación-de-integrales",
     "title": "Aproximación de integrales",
-    "section": "1 Aproximación de integrales",
-    "text": "1 Aproximación de integrales\n\nEn este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas. Se puede hacer mediante la fórmula de Simpson, la regla de los trapecios o el método de los coeficientes indeterminados."
+    "section": "Aproximación de integrales",
+    "text": "Aproximación de integrales\n\nEn este tipo de problemas intentamos estimar el resultado de una integral a través de varias fórmulas.\nSe puede hacer mediante la fórmula de Simpson, la regla de los trapecios o el método de los coeficientes indeterminados."
   },
   {
     "objectID": "contents/aproximacion_integrales.html#regla-de-los-trapecios",
     "href": "contents/aproximacion_integrales.html#regla-de-los-trapecios",
     "title": "Aproximación de integrales",
-    "section": "2 Regla de los trapecios",
-    "text": "2 Regla de los trapecios\n\nLa regla de los trapecios aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{2}\\left(f(a) + f(b)\\right)\n\\]"
+    "section": "Regla de los trapecios",
+    "text": "Regla de los trapecios\n\nLa regla de los trapecios aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{2}\\left(f(a) + f(b)\\right)\n\\]"
   },
   {
     "objectID": "contents/aproximacion_integrales.html#fórmula-de-simpson",
     "href": "contents/aproximacion_integrales.html#fórmula-de-simpson",
     "title": "Aproximación de integrales",
-    "section": "3 Fórmula de Simpson",
-    "text": "3 Fórmula de Simpson\n\nLa fórmula de Simpson aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{6} \\left(f(a)+4 f\\left(\\frac{a+b}{2}\\right)+f(b)\\right)\n\\]"
+    "section": "Fórmula de Simpson",
+    "text": "Fórmula de Simpson\n\nLa fórmula de Simpson aproxima una integral de una función \\(f(x)\\) de esta manera:\n\n\n\\[\n\\int_a^b f(x) \\approx \\frac{b-a}{6} \\left(f(a)+4 f\\left(\\frac{a+b}{2}\\right)+f(b)\\right)\n\\]"
   },
   {
     "objectID": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados",
     "href": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados",
     "title": "Aproximación de integrales",
-    "section": "4 Método de los coeficientes indeterminados",
-    "text": "4 Método de los coeficientes indeterminados\n\nEl método de los coeficientes indeterminados aproxima una integral de una función \\(f(x)\\) así:\n\n\n\\[\n\\int_a^b f(x) \\approx \\omega_0 f(k_1) + \\omega_1 f(k_2)\n\\]\n\n\n\n\n\n\n\n\nInfo\n\n\nEn el ejercicio nos tienen que dar los valores de \\(k_1\\) y \\(k_2\\) para usar este método."
+    "section": "Método de los coeficientes indeterminados",
+    "text": "Método de los coeficientes indeterminados\n\nEl método de los coeficientes indeterminados aproxima una integral de una función \\(f(x)\\) así:\n\n\n\\[\n\\int_a^b f(x) \\approx \\omega_0 f(k_1) + \\omega_1 f(k_2)\n\\]\n\n\n\n\n\n\n\n\nInfo\n\n\nEn el ejercicio nos tienen que dar los valores de \\(k_1\\) y \\(k_2\\) para usar este método."
   },
   {
     "objectID": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados-1",
     "href": "contents/aproximacion_integrales.html#método-de-los-coeficientes-indeterminados-1",
     "title": "Aproximación de integrales",
-    "section": "5 Método de los coeficientes indeterminados",
-    "text": "5 Método de los coeficientes indeterminados\n\nPara encontrar los valores \\(\\omega_0\\) y \\(\\omega_1\\), llamados pesos para todos los polinomios de grado menor o igual que \\(\\lambda\\), hay que seguir los siguientes pasos:\n\n\nEncontrar una ecuación suponiendo que \\(f(x)\\equiv 1\\).\nEncontrar \\(\\lambda\\) ecuaciones suponiendo que \\(f(x)\\equiv \\{x^1,\\dots,x^\\lambda\\}\\).\nA partir de las ecuaciones, conseguir los pesos \\(\\omega_0\\) y \\(\\omega_1\\)."
+    "section": "Método de los coeficientes indeterminados",
+    "text": "Método de los coeficientes indeterminados\nPara encontrar los valores \\(\\omega_0\\) y \\(\\omega_1\\) (llamados pesos) para todos los polinomios de grado menor o igual que \\(\\lambda\\), hay que seguir los siguientes pasos:\n\nEncontrar una ecuación suponiendo que \\(f(x)\\equiv 1\\).\nEncontrar \\(\\lambda\\) ecuaciones suponiendo que \\(f(x)\\equiv \\{x^1,\\dots,x^\\lambda\\}\\).\nA partir de las ecuaciones, conseguir los pesos \\(\\omega_0\\) y \\(\\omega_1\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo",
+    "href": "contents/aproximacion_integrales.html#ejemplo",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo",
+    "text": "Ejemplo\n\nVamos a ver el ejercicio 1 del Parcial 2 de enero de 2024:\n\n\nConsideremos la siguiente fórmula de integración aproximada, donde \\(\\alpha\\) es un valor real tal que \\(0 &lt; \\alpha &lt; 1\\).\n\n\n\\[\n\\int_0^1 f(x)~\\mathrm{d}x \\approx \\omega_0 f(0) + \\omega_1 f(\\alpha)\n\\]\n\n\na) Determina los valores de los pesos \\(\\omega_0\\) y \\(\\omega_1\\) para que la fórmula anterior sea exacta para todos los polinomios \\(f(x)\\) de grado menor o igual que 1. El resultado depende de \\(\\alpha\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-a",
+    "href": "contents/aproximacion_integrales.html#ejemplo-a",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (a)",
+    "text": "Ejemplo (a)\n\n1. Encontrar una ecuación suponiendo que \\(f(x)\\equiv 1\\). Cambiamos \\(f(x)\\) en la fórmula por 1, sustituyendo \\(\\approx\\) por \\(=\\):\n\n\n\\[\n\\begin{gather}\n\\int_0^1 1~\\mathrm{d}x = \\omega_0\\cdot 1+\\omega_1\\cdot1\\\\\\\\\n1\\cdot \\big[x  \\big]_0^1 = \\omega_0+\\omega_1\\\\\\\\\n1=\\omega_0+\\omega_1\\label{1}\\tag{i}\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-a-1",
+    "href": "contents/aproximacion_integrales.html#ejemplo-a-1",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (a)",
+    "text": "Ejemplo (a)\n\n2. Encontrar \\(\\lambda\\) ecuaciones suponiendo que \\(\\small f(x)\\equiv \\{x^1,\\dots,x^\\lambda\\}\\). En nuestro caso, \\(\\lambda=1\\), por lo tanto sustituimos \\(f(x)\\) por \\(x\\):\n\n\n\\[\n\\begin{gather}\\small\n\\int_0^1 x~\\mathrm{d}x = \\omega_0 \\cdot 0 + \\omega_1 \\cdot\\alpha\\\\\\small\n\\left[\\tfrac{x^2}{2}\\right]_0^1=\\omega_1\\cdot \\alpha\\\\\\small\n\\tfrac{1}{2} = \\omega_1\\cdot\\alpha\\\\\\small\n\\omega_1=\\tfrac{1}{2\\alpha}\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-a-2",
+    "href": "contents/aproximacion_integrales.html#ejemplo-a-2",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (a)",
+    "text": "Ejemplo (a)\n\n3. A partir de las ecuaciones, conseguir los pesos \\(\\omega_0\\) y \\(\\omega_1\\):\n\n\nAhora que tenemos \\(\\omega_1\\), podemos encontrar \\(\\omega_0\\) con la ecuación \\(\\eqref{1}\\):\n\n\n\\[\n\\begin{gather}\n1=\\omega_0+\\omega_1\\\\\n1-\\omega_1=\\omega_0\\\\\n1-\\tfrac{1}{2\\alpha} = \\omega_0 \\label{2}\\tag{ii}\n\\end{gather}\n\\]\n\n\nObteniendo así \\(\\small\\omega_0 = 1 - \\tfrac{1}{2\\alpha}\\) y \\(\\small\\omega_1 = \\tfrac{1}{2\\alpha}\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-b",
+    "href": "contents/aproximacion_integrales.html#ejemplo-b",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (b)",
+    "text": "Ejemplo (b)\n\nDetermina el valor de \\(\\alpha\\) para que la fórmula anterior también sea exacta para todos los polinomios \\(f(x)\\) de grado menor o igual a 2.\n\n\nEn este apartado, la \\(\\lambda\\) (grado máximo) pasa a ser 2, por lo tanto también deberemos valorar el caso \\(f(x)\\equiv x^2\\), sustituyendo \\(\\omega_1\\) usando \\(\\eqref{1}\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-b-1",
+    "href": "contents/aproximacion_integrales.html#ejemplo-b-1",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (b)",
+    "text": "Ejemplo (b)\n\n\\[\n\\begin{gather}\n\\int_0^1 x^2~\\mathrm{d}x = \\omega_0 \\cdot 0^2 + \\omega_1 \\cdot\\alpha^2\\\\\n\\left[\\tfrac{x^3}{3}\\right]_0^1=\\omega_1\\cdot \\alpha^2\\\\\n\\tfrac 1 3 = \\tfrac{1}{2\\alpha}\\cdot\\alpha^2\\\\\n\\tfrac 1 3 = \\tfrac{\\alpha}{2}\\\\\n\\tfrac 2 3 = \\alpha \\label{3}\\tag{iii}\n\\end{gather}\n\\]\n\n\nPor lo tanto, \\(\\alpha = \\tfrac 2 3\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\n\nUsa la regla anterior y la regla de Simpson para aproximar el valor de la integral:\n\n\n\\[\n\\int_0^1 \\sqrt[3]{8-2x}~ \\mathrm{d}x\n\\]\n\n\n¿Cuál da un error menor?\n\n\nYa que ahora tenemos el valor de \\(\\alpha\\), vamos a sustituirlo en la fórmula usando \\(\\eqref{1}\\), \\(\\eqref{2}\\) y \\(\\eqref{3}\\)."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c-1",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c-1",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\n\n\\[\n\\begin{gather}\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x \\approx \\omega_0 f(0) + \\omega_1 f(\\alpha)\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x \\approx (1-\\tfrac{1}{2\\alpha})\\ \\sqrt[3]{8-2\\cdot 0} + (\\tfrac{1}{2\\alpha}) \\sqrt[3]{8-2\\cdot \\alpha}\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x \\approx (1-\\tfrac{1}{2\\tfrac 2 3})\\ \\cdot 2 + (\\tfrac{1}{2\\tfrac 2 3}) \\sqrt[3]{8-2\\cdot \\tfrac 2 3}\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x\\approx \\tfrac 1 4 \\cdot 2 + \\tfrac 3 4 \\cdot \\sqrt[3]{\\tfrac{20}{3}}\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x\\approx 1.91155\\dots\n\\end{gather}\n\\]\n\n\nPor lo tanto, usando la fórmula proporcionada, la integral da aproximadamente \\(\\small 1.91155\\dots\\)"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c-2",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c-2",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\n\nAhora calculemos usando la fórmula de Simpson.\n\n\n\\[\n\\begin{gather}\n\\int_a^b f(x) \\approx \\frac{b-a}{6} \\left(f(a)+4 f\\left(\\frac{a+b}{2}\\right)+f(b)\\right)\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~ \\mathrm{d}x\\approx \\frac{1-0}{6} \\left(f(0)+4f\\left(\\frac{0+1}{2}\\right)+f(1)\\right)\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~ \\mathrm{d}x\\approx \\tfrac 1 6 \\left(\\sqrt[3]{8-2\\cdot 0}+4\\sqrt[3]{8-2\\tfrac 1 2}+\\sqrt[3]{8-2\\cdot 1}\\right)\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~ \\mathrm{d}x\\approx \\tfrac 1 6 \\left(2+4\\sqrt[3]{7}+\\sqrt[3]{6}\\right)\\\\\n\\int_0^1 \\sqrt[3]{8-2x}~ \\mathrm{d}x\\approx 1.91147\\dots\n\\end{gather}\n\\]\n\n\n¿Pero cuál tiene un error menor? Para eso hay que calcular el valor exacto de la integral."
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c-3",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c-3",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\n\nUsaremos cambio de variable para resolver esta integral:\n\n\n\\[\n\\begin{gather}\n\\int_0^1 \\sqrt[3]{8-2x}~\\mathrm{d}x\\\\\\\\\n\\small\n\\boxed{u = 8-2x} \\\\\n\\small\n\\mathrm{d}u = -2\\cdot \\mathrm{d}x \\longrightarrow \\boxed{\\mathrm{d}x = \\frac{\\mathrm{d}u}{-2}}\\\\\\\\\n\\int_0^1 \\sqrt[3]{u}~\\frac{\\mathrm{d}u}{-2}\\\\\\\\\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c-4",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c-4",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\nUsaremos cambio de variable para resolver esta integral:\n\\[\n\\begin{gather}\n\\int_0^1 \\sqrt[3]{u}~\\frac{\\mathrm{d}u}{-2}\\\\\n\\int_0^1 u^{\\tfrac 1 3}~\\frac{\\mathrm{d}u}{-2}\\\\\n\\left[\\frac{u^{\\tfrac 4 3}}{\\tfrac 4 3}\\cdot \\frac{1}{-2}\\right]_0^1\\\\\n\\left[\\frac{{3\\cdot(8-2x)}^{\\tfrac 4 3}}{-8}\\right]_0^1 =\\left[\\frac{3\\cdot\\sqrt[3]{{(8-2x)}^4}}{-8}\\right]_0^1 \\\\\n\\end{gather}\n\\]"
+  },
+  {
+    "objectID": "contents/aproximacion_integrales.html#ejemplo-c-5",
+    "href": "contents/aproximacion_integrales.html#ejemplo-c-5",
+    "title": "Aproximación de integrales",
+    "section": "Ejemplo (c)",
+    "text": "Ejemplo (c)\nUsaremos cambio de variable para resolver esta integral:\n\\[\n\\begin{gather}\n\\left[\\frac{3\\cdot\\sqrt[3]{{(8-2x)}^4}}{-8}\\right]_0^1 = \\frac{3\\cdot(\\sqrt[3]{(8-2\\cdot 1)^4})}{-8} - \\frac{3\\cdot(\\sqrt[3]{(8-2\\cdot 0)^4})}{-8}\\\\\n\\frac{-3\\cdot \\sqrt[3]{6^4}}{-8}-\\frac{-3\\cdot \\sqrt[3]{8^4}}{-8} = 1.91148\\dots\\\\\n\\end{gather}\n\\]\n\nAsí que tenemos \\(\\small 1.91155\\dots\\) (fórmula de los coeficientes indeterminados), \\(\\small 1.91147\\dots\\) (regla de Simpson) y el valor exacto es \\(\\small 1.91148\\dots\\). Calculamos el error de cada uno:\n\\(\\text{error}_{\\text{f. coef. ind.}} = |1.91148\\dots - 1.91155\\dots| \\approx 0.00007\\), \\(\\text{error}_{\\text{f. Simpson}} = |1.91148\\dots -  1.91147\\dots| \\approx 0.00001\\)\nComo el error es menor, podemos concluir que la mejor aproximación es la de la regla de Simpson."
   },
   {
     "objectID": "contents/optimizacion.html",
