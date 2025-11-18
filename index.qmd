@@ -18,4 +18,18 @@ listing:
 
 Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.
 
+:::{.callout-tip collapse="true"}
+## Imprimir las páginas a PDF
+
+Para imprimir las páginas a PDF **(solo las presentaciones)**, sigue estos pasos:
+
+- Pulsa la tecla *E* para entrar en modo *Print*.
+- Pulsa *Ctrl+P* para imprimir la página a PDF.
+- Cambia el destino a "Imprimir PDF".
+- Cambia la orientación a *horizontal*.
+- Cambia los márgenes a *ninguno*.
+- Activa la opción *Gráficos de fondo*.
+- Pulsa "imprimir".
+:::
+
 Tenemos las siguientes páginas:
