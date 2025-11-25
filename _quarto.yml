@@ -5,7 +5,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "Se ha añadido la página [puntos críticos](/contents/puntos_criticos.qmd)."
+    content: "Se ha añadido la página [Distribución normal](/contents/distribucion_normal.qmd)."
     type: info
     position: below-navbar
   title: "CálculoGATE"
@@ -25,7 +25,8 @@ website:
         text: Puntos críticos
       - href: contents/aproximacion_integrales.qmd
         text: Aproximación de integrales
-
+      - href: contents/distribucion_normal.qmd
+        text: Distribución Normal
 format:
   html:
     theme:

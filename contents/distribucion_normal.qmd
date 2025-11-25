@@ -1,0 +1,74 @@
+---
+title: "Distribución normal"
+date: "2025-11-25"
+date-format: "YYYY-MM-DD"
+number-sections: false
+format: 
+  revealjs:
+    fig-cap-location: top
+    transition: fade
+    pdf-separate-fragments: false
+author:
+    - name: "Naïm Saadi"
+      email: "nsaadig16@gmail.com"
+---
+
+## Qué es la distribución normal?
+
+. . . 
+
+La distribución normal es una distribución de probabilidad que describre fenómenos que suelen centrarse en un valor medio.
+
+![Campana de Gauss](/figures/gauss%202.gif)
+
+## Conceptos
+
+. . .
+
+$\large \mu$: Media poblacional, indica el centro de la distribución.
+
+$\large \bar{x}$: Media muestral.
+
+$\large \sigma$: Desviación estándar, indica lo ancha que es la curva (el error).
+
+$\large \alpha$: Nivel de significación, indica el riesgo aceptado de equivocarse.
+
+$\large n$: Muestra, cantidad de información recogida.
+
+
+
+## Intervalo de confianza
+
+. . .
+
+Un intervalo de confianza indica la seguridad que se tiene en encontrar dicho valor en ese intervalo.
+
+Podemos encontrar este intervalo de dos formas diferentes dependiendo de lo que dispongamos:
+
+:::{.incremental}
+1. Conocemos $\sigma$ y $n \geq 30$.
+2. No conocemos $\sigma$.
+:::
+
+## Intervalo de confianza con $\sigma$ conocida
+
+Se calcula así:
+
+. . .
+
+$$
+IC = \bar{x} \pm Z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
+$$
+
+Pero qué es $Z_{\alpha / 2}$?
+
+## Valor crítico
+
+. . .
+
+La notación $Z_k$ representa el valor crítico de la distribución normal tal que el valor de $Z$ deja una cola a la derecha de un $k\%$.
+Es decir, si tuvieramos $k=0.23$, deberíamos obtener $1-k=1-0.23=0.67$, y al buscarlo en la siguiente tabla nos daría el valor $0.44$.
+
+![](/figures/normal.png){width="50%"}
+
+# En proceso...
