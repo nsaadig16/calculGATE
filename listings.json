@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/contents/distribucion_normal.html",
       "/contents/aproximacion_integrales.html",
       "/contents/puntos_criticos.html",
       "/contents/optimizacion.html",
