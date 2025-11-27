@@ -252,31 +252,101 @@
     "text": "Valor crítico\n\nLa notación \\(Z_k\\) representa el valor crítico de la distribución normal tal que el valor de \\(Z\\) deja una cola a la derecha de un \\(k\\%\\). Es decir, si tuvieramos \\(k=0.23\\), deberíamos obtener \\(1-k=1-0.23=0.67\\), y al buscarlo en la siguiente tabla nos daría el valor \\(0.44\\)."
   },
   {
-    "objectID": "contents/optimizacion.html",
-    "href": "contents/optimizacion.html",
-    "title": "Optimización",
-    "section": "",
-    "text": "Aquí encontraréis una guía de como resolver problemas de optimización."
-  },
-  {
     "objectID": "contents/optimizacion.html#elementos-de-un-problema",
     "href": "contents/optimizacion.html#elementos-de-un-problema",
     "title": "Optimización",
-    "section": "1 Elementos de un problema",
-    "text": "1 Elementos de un problema\nEn un problema de optimización, solemos encontrar los siguientes elementos:\n\n1.1 Variables\nEn los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos variables, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.\n\n\n1.2 Información previa\nPara poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de información previa para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de ecuación.\n\n\n1.3 Función a minimizar o maximizar\nPara acabar, debemos tener una función o cualidad del problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos variables."
+    "section": "Elementos de un problema",
+    "text": "Elementos de un problema\nEn un problema de optimización, solemos encontrar los siguientes elementos:\n\nVariables\nInformación previa\nFunción a maximizar/minimizar"
+  },
+  {
+    "objectID": "contents/optimizacion.html#variables",
+    "href": "contents/optimizacion.html#variables",
+    "title": "Optimización",
+    "section": "Variables",
+    "text": "Variables\n\nEn los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones. A estos valores los llamaremos variables, y serán aquellos que tenemos que encontrar. En problemas de optimización que tengan a ver con geometría, normalmente esos valores son las dimensiones.\n\n\n\n\n\n\n\n\n\nDatos\n\n\nVariables: \\(x,y\\)"
+  },
+  {
+    "objectID": "contents/optimizacion.html#información-previa",
+    "href": "contents/optimizacion.html#información-previa",
+    "title": "Optimización",
+    "section": "Información previa",
+    "text": "Información previa\n\nPara poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de información previa para poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de ecuación.\n\n\n\n\n\n\n\n\n\nDatos\n\n\nVariables: \\(x,y\\)\nInformación previa: \\(x=k\\cdot y + k'\\)"
+  },
+  {
+    "objectID": "contents/optimizacion.html#función-a-minimizar-o-maximizar",
+    "href": "contents/optimizacion.html#función-a-minimizar-o-maximizar",
+    "title": "Optimización",
+    "section": "Función a minimizar o maximizar",
+    "text": "Función a minimizar o maximizar\n\nPara acabar, debemos tener una función o relación en el problema que hay que minimizar o maximizar. Esta vendrá en forma de una función que normalmente contiene las dos variables.\n\n\n\n\n\n\n\n\n\nDatos\n\n\nVariables: \\(x,y\\)\nInformación previa: \\(x=k\\cdot y + k'\\)\nFunción: \\(f(x,y)\\)"
   },
   {
     "objectID": "contents/optimizacion.html#resolución-del-problema",
     "href": "contents/optimizacion.html#resolución-del-problema",
     "title": "Optimización",
-    "section": "2 Resolución del problema",
-    "text": "2 Resolución del problema\nSe puede resolver un problema de optimización siguiendo estos pasos:\n\n2.1 Obtener la función a minimizar/maximizar:\nDadas las variables \\(\\large a\\) y \\(\\large b\\), debemos formar la función \\(\\large f(a,b)\\) de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables.\n\n\n2.2 Encontrar la equivalencia entre las dos variables:\nDebemos expresar \\(\\large a\\) en función de \\(\\large b\\), o por lo contrario, \\(\\large b\\) en función de \\(\\large a\\), usando la información previa.\n\n\n2.3 Expresar la función con una única variable:\nAhora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado \\(\\large a\\), la sustituimos en la función de forma que \\(\\large f(a,b)\\) pase a ser \\(\\large f(b)\\).\n\n\n2.4 Encontrar para que valor la función es máxima/mínima\nUna vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0 (ver aquí). Si nos dan más de dos valores, comprobad si son máximos o mínimos y que concuerde con el enunciado.\n\n\n2.5 Encontrar el otro valor con la ecuación\nAhora que ya tenemos una de las dos variables, solo hace falta sustituirla en la ecuación que hemos obtenido en el paso 2.2, y de esta forma ya obtendremos las dos dimensiones."
+    "section": "Resolución del problema",
+    "text": "Resolución del problema\nSe puede resolver un problema de optimización siguiendo estos pasos:\n\nObtener la función a maximizar/minimizar\nEncontrar la equivalencia entre las variables\nExpresar la función con una única variable\nEncontrar el valor en que la función es máxima/mínima\nEncontrar el otro valor con la ecuación"
+  },
+  {
+    "objectID": "contents/optimizacion.html#obtener-la-función-a-minimizarmaximizar",
+    "href": "contents/optimizacion.html#obtener-la-función-a-minimizarmaximizar",
+    "title": "Optimización",
+    "section": "Obtener la función a minimizar/maximizar",
+    "text": "Obtener la función a minimizar/maximizar\n\nDadas las variables \\(\\large x\\) y \\(\\large y\\), debemos formar la función \\(\\large f(x,y)\\) de la que se nos pide encontrar un máximo o mínimo, y que dependa de estas variables. Normalmente suele ser el área o el coste."
+  },
+  {
+    "objectID": "contents/optimizacion.html#encontrar-la-equivalencia-entre-las-dos-variables",
+    "href": "contents/optimizacion.html#encontrar-la-equivalencia-entre-las-dos-variables",
+    "title": "Optimización",
+    "section": "Encontrar la equivalencia entre las dos variables",
+    "text": "Encontrar la equivalencia entre las dos variables\n\nDebemos expresar \\(\\large x\\) en función de \\(\\large y\\), o por lo contrario, \\(\\large y\\) en función de \\(\\large x\\), usando la información previa. Suelen ser perímetros o volúmenes ya dados por el problema."
+  },
+  {
+    "objectID": "contents/optimizacion.html#expresar-la-función-con-una-única-variable",
+    "href": "contents/optimizacion.html#expresar-la-función-con-una-única-variable",
+    "title": "Optimización",
+    "section": "Expresar la función con una única variable",
+    "text": "Expresar la función con una única variable\n\nAhora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable. Por ejemplo, si hemos aislado \\(\\large x\\), la sustituimos en la función de forma que \\(\\large f(x,y)\\) pase a ser \\(\\large f(y)\\)."
+  },
+  {
+    "objectID": "contents/optimizacion.html#encontrar-para-que-valor-la-función-es-máximamínima",
+    "href": "contents/optimizacion.html#encontrar-para-que-valor-la-función-es-máximamínima",
+    "title": "Optimización",
+    "section": "Encontrar para que valor la función es máxima/mínima",
+    "text": "Encontrar para que valor la función es máxima/mínima\n\nUna vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la derivada de la función y la igualaremos a 0. Si nos dan más de dos valores, comprobad si son máximos o mínimos (haciendo la segunda derivada y sustituyendo los valores) y que concuerde con el enunciado."
+  },
+  {
+    "objectID": "contents/optimizacion.html#encontrar-el-otro-valor-con-la-ecuación",
+    "href": "contents/optimizacion.html#encontrar-el-otro-valor-con-la-ecuación",
+    "title": "Optimización",
+    "section": "Encontrar el otro valor con la ecuación",
+    "text": "Encontrar el otro valor con la ecuación\n\nAhora que ya tenemos una de las dos variables, solo hace falta sustituirla en la ecuación que hemos obtenido para encontrar la equivalencia (ver aquí), y de esta forma ya obtendremos las dos dimensiones."
   },
   {
     "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo",
     "href": "contents/optimizacion.html#ejercicio-de-ejemplo",
     "title": "Optimización",
-    "section": "3 Ejercicio de ejemplo",
-    "text": "3 Ejercicio de ejemplo\n\nDe todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?\n\nObtenemos lo siguiente:\n\nVariables:\n\n\\(\\large b\\): base del rectángulo\n\\(\\large h\\): altura del rectángulo\n\nInformación previa:\n\nEl perímetro es 20cm, por lo tanto: \\(\\large 2b + 2h = 20\\)\n\nFunción a maximizar:\n\nÁrea, por lo tanto: \\(\\large A(b,h) = b\\cdot h\\)\n\n\nEncontramos la ecuación:\n\\[\\begin{gathered}\n2b + 2h=20\\\\\n2b = 20 -2h\\\\\nb = \\frac{20-2h}{2}\\\\\nb = 10-h\n\\end{gathered}\\]\nAhora lo sustituimos en la función:\n\\[\\begin{gathered}\nA(b,h) = b\\cdot h\\\\\nA(h) = (10-h)\\cdot h\\\\\nA(h) = -h^2 + 10h\n\\end{gathered}\\]\nEncontramos el mínimo\n\\[\\begin{gathered}\nA(h) = -h^2 + 10h\\\\\nA'(h) = -2h+10\\\\\nA'(h) = 0\\\\\n-2h+10 = 0\\\\\n-2h = -10\\\\\nh = \\frac{-10}{-2}\\\\\nh = 5\n\\end{gathered}\\]\nY una vez tenemos \\(\\large h\\), conseguimos \\(\\large b\\):\n\\[\\begin{gathered}\nb = 10 -h\\\\\nb = 10 - 5\\\\\nb = 5\n\\end{gathered}\\]\nAsí conseguimos \\(\\large h=5, b=5\\), es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm."
+    "section": "Ejercicio de ejemplo",
+    "text": "Ejercicio de ejemplo\n\nDe todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?\n\n\nObtenemos lo siguiente:\n\nVariables:\n\n\\(b\\): base del rectángulo\n\\(h\\): altura del rectángulo\n\nInformación previa:\n\nEl perímetro es 20cm, por lo tanto: \\(2b + 2h = 20\\)\n\nFunción a maximizar:\n\nÁrea, por lo tanto: \\(A(b,h) = b\\cdot h\\)"
+  },
+  {
+    "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo-1",
+    "href": "contents/optimizacion.html#ejercicio-de-ejemplo-1",
+    "title": "Optimización",
+    "section": "Ejercicio de ejemplo",
+    "text": "Ejercicio de ejemplo\n\nEncontramos la ecuación:\n\\[\\begin{gathered}\n2b + 2h=20\\\\\n2b = 20 -2h\\\\\nb = \\frac{20-2h}{2}\\\\\nb = 10-h\n\\end{gathered}\\]\n\n\nY la sustituimos en la función:\n\\[\\begin{gathered}\nA(b,h) = b\\cdot h\\\\\nA(h) = (10-h)\\cdot h\\\\\nA(h) = -h^2 + 10h\n\\end{gathered}\\]"
+  },
+  {
+    "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo-2",
+    "href": "contents/optimizacion.html#ejercicio-de-ejemplo-2",
+    "title": "Optimización",
+    "section": "Ejercicio de ejemplo",
+    "text": "Ejercicio de ejemplo\n\nEncontramos el mínimo\n\\[\\begin{gathered}\nA(h) = -h^2 + 10h\\\\\nA'(h) = -2h+10\\\\\nA'(h) = 0\\\\\n-2h+10 = 0\\\\\n-2h = -10\\\\\nh = \\frac{-10}{-2}\\\\\nh = 5\n\\end{gathered}\\]\n\n\nY una vez tenemos \\(\\large h\\), conseguimos \\(\\large b\\):\n\\[\\begin{gathered}\nb = 10 -h\\\\\nb = 10 - 5\\\\\nb = 5\n\\end{gathered}\\]"
+  },
+  {
+    "objectID": "contents/optimizacion.html#ejercicio-de-ejemplo-3",
+    "href": "contents/optimizacion.html#ejercicio-de-ejemplo-3",
+    "title": "Optimización",
+    "section": "Ejercicio de ejemplo",
+    "text": "Ejercicio de ejemplo\nAsí conseguimos: \\[\\large h=5, b=5\\] Es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm."
   }
 ]
