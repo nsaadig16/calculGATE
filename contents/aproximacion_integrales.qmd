@@ -7,6 +7,7 @@ format:
   revealjs:
     transition: fade
     pdf-separate-fragments: false
+    history: false
 author:
     - name: "Naïm Saadi"
       email: "nsaadig16@gmail.com"

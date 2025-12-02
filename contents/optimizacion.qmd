@@ -2,76 +2,142 @@
 title: "Optimización"
 date: "2025-10-17"
 date-format: "YYYY-MM-DD"
-number-sections: true
+number-sections: false
+format: 
+  revealjs: 
+    fig-cap-location: top
+    transition: fade
+    pdf-separate-fragments: false
+    history: false
 author:
     - name: "Naïm Saadi"
       email: "nsaadig16@gmail.com"
 ---
 
-Aquí encontraréis una guía de como resolver problemas de optimización.
-
 ## Elementos de un problema
 
 En un problema de optimización, solemos encontrar los siguientes elementos:
 
-### Variables {#sec-variables}
+:::{.incremental}
+1. [Variables](optimizacion.qmd#variables)
+2. [Información previa](optimizacion.qmd#información-previa)
+3. [Función a maximizar/minimizar](optimizacion.qmd#función-a-minimizar-o-maximizar)
+:::
+
+## Variables 
+
+. . .
 
 En los problemas de optimización, normalmente debemos dar como solución unos valores que cumplan ciertas condiciones.
 A estos valores los llamaremos **variables**, y serán aquellos que tenemos que encontrar. En problemas de optimización que
-tengan a ver con geometría, normalmente esos valores son las dimensiones.
+tengan a ver con geometría, normalmente esos valores son las **dimensiones**.
 
-### Información previa {#sec-info}
+. . .
+
+:::{.callout-note title="Datos"} 
+Variables: $x,y$
+:::
+
+## Información previa
+
+. . .
+
 
 Para poder resolver un problema de optimización con dos variables, será necesario tener algun tipo de **información previa** para
 poder relacionar una variable con la otra. Esta información previa normalmente vendrá en forma de **ecuación**.
 
-### Función a minimizar o maximizar {#sec-func}
+. . .
 
-Para acabar, debemos tener una **función** o **cualidad** del problema que hay que minimizar o maximizar. Esta vendrá en forma
-de una función que normalmente contiene las dos [variables](#sec-variables).
+:::{.callout-note title="Datos"} 
+Variables: $x,y$
+
+Información previa: $x=k\cdot y + k'$
+:::
+
+## Función a minimizar o maximizar
+
+. . .
+
+
+Para acabar, debemos tener una **función** o **relación** en el problema que hay que minimizar o maximizar. Esta vendrá en forma
+de una función que normalmente contiene las dos *variables*.
+
+. . .
+
+
+:::{.callout-note title="Datos"} 
+Variables: $x,y$
+
+Información previa: $x=k\cdot y + k'$
+
+Función: $f(x,y)$
+:::
 
 ## Resolución del problema
 
 Se puede resolver un problema de optimización siguiendo estos pasos:
 
-### Obtener la [función a minimizar/maximizar](#sec-func):
+:::{.incremental}
+1. [Obtener la función a maximizar/minimizar](optimizacion.qmd#obtener-la-función-a-minimizarmaximizar)
+2. [Encontrar la equivalencia entre las variables](optimizacion.qmd#encontrar-la-equivalencia-entre-las-dos-variables)
+3. [Expresar la función con una única variable](optimizacion.qmd#expresar-la-función-con-una-única-variable)
+4. [Encontrar el valor en que la función es máxima/mínima](optimizacion.qmd#encontrar-para-que-valor-la-función-es-máximamínima)
+5. [Encontrar el otro valor con la ecuación](optimizacion.qmd#encontrar-el-otro-valor-con-la-ecuación)
+:::
 
-Dadas las variables $\large a$ y $\large b$, debemos formar la función $\large f(a,b)$ de la que se nos pide encontrar un máximo o mínimo,
-y que dependa de estas variables. 
+## Obtener la función a minimizar/maximizar
 
-### Encontrar la equivalencia entre las dos variables: {#sec-ec}
+. . .
 
-Debemos expresar $\large a$ en función de $\large b$, o por lo contrario, $\large b$ en función de $\large a$, usando la [información previa](#sec-info).
+Dadas las variables $\large x$ y $\large y$, debemos formar la función $\large f(x,y)$ de la que se nos pide encontrar un máximo o mínimo,
+y que dependa de estas variables. Normalmente suele ser el área o el coste.
 
-### Expresar la función con una única variable:
+## Encontrar la equivalencia entre las dos variables
+
+. . .
+
+Debemos expresar $\large x$ en función de $\large y$, o por lo contrario, $\large y$ en función de $\large x$, usando la información previa. Suelen ser perímetros o volúmenes ya dados por el problema.
+
+## Expresar la función con una única variable
+
+. . .
 
 Ahora debemos sustituir la variable que hemos aislado en el paso anterior en la función, para que solo tengamos una variable.
-Por ejemplo, si hemos aislado $\large a$, la sustituimos en la función de forma que $\large f(a,b)$ pase a ser $\large f(b)$.
+Por ejemplo, si hemos aislado $\large x$, la sustituimos en la función de forma que $\large f(x,y)$ pase a ser $\large f(y)$.
 
-### Encontrar para que valor la función es máxima/mínima
+## Encontrar para que valor la función es máxima/mínima
+
+. . .
 
 Una vez que nuestra función solo tiene una variable, debemos encontrar para qué valor es máxima o mínima. Para eso, haremos la 
-derivada de la función y la igualaremos a 0 (ver [aquí](/contents/analisis.qmd#sec-extremos)). Si nos dan más de dos valores,
-comprobad si son máximos o mínimos y que concuerde con el enunciado.
+derivada de la función y la igualaremos a 0. Si nos dan más de dos valores,
+comprobad si son máximos o mínimos (haciendo la segunda derivada y sustituyendo los valores) y que concuerde con el enunciado.
 
-### Encontrar el otro valor con la [ecuación](#sec-info)
+## Encontrar el otro valor con la ecuación
 
-Ahora que ya tenemos una de las dos [variables](#sec-variables), solo hace falta sustituirla en la ecuación que hemos obtenido en
-el paso [-@sec-ec], y de esta forma ya obtendremos las dos dimensiones.
+. . .
 
-## Ejercicio de ejemplo
+Ahora que ya tenemos una de las dos *variables*, solo hace falta sustituirla en la ecuación que hemos obtenido para encontrar la equivalencia [(ver aquí)](optimizacion.qmd#encontrar-la-equivalencia-entre-las-dos-variables), y de esta forma ya obtendremos las dos dimensiones.
+
+## Ejercicio de ejemplo {.smaller}
 
 > De todos los rectángulos de perímetro 20cm, ¿cuál es aquel que tiene la máxima área?
+
+. . .
 
 Obtenemos lo siguiente:
 
 - Variables:
-    - $\large b$: base del rectángulo
-    - $\large h$: altura del rectángulo
+    - $b$: base del rectángulo
+    - $h$: altura del rectángulo
 - Información previa:
-    - El perímetro es 20cm, por lo tanto: $\large 2b + 2h = 20$
+    - El perímetro es 20cm, por lo tanto: $2b + 2h = 20$
 - Función a maximizar:
-    - Área, por lo tanto: $\large A(b,h) = b\cdot h$
+    - Área, por lo tanto: $A(b,h) = b\cdot h$
+
+## Ejercicio de ejemplo {.smaller}
+
+. . .
 
 Encontramos la ecuación:
 
@@ -82,13 +148,21 @@ b = \frac{20-2h}{2}\\
 b = 10-h
 \end{gathered}$$
 
-Ahora lo sustituimos en la función:
+. . .
+
+
+Y la sustituimos en la función:
 
 $$\begin{gathered}
 A(b,h) = b\cdot h\\
 A(h) = (10-h)\cdot h\\
 A(h) = -h^2 + 10h
 \end{gathered}$$
+
+## Ejercicio de ejemplo {.smaller}
+
+. . .
+
 
 Encontramos el mínimo
 
@@ -102,6 +176,8 @@ h = \frac{-10}{-2}\\
 h = 5
 \end{gathered}$$
 
+. . .
+
 Y una vez tenemos $\large h$, conseguimos $\large b$:
 
 $$\begin{gathered}
@@ -110,4 +186,8 @@ b = 10 - 5\\
 b = 5
 \end{gathered}$$
 
-Así conseguimos $\large h=5, b=5$, es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm.
+## Ejercicio de ejemplo {.smaller}
+
+Así conseguimos: $$\large h=5, b=5$$ Es decir, el rectángulo de perímetro 20cm con mayor área es un cuadrado de 5x5cm.
+
+# Fin

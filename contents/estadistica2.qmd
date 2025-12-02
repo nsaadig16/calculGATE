@@ -1,0 +1,53 @@
+---
+title: "Estadística (II)"
+date: "2025-12-02"
+date-format: "YYYY-MM-DD"
+number-sections: false
+format: 
+  revealjs:
+    fig-cap-location: top
+    transition: fade
+    pdf-separate-fragments: false
+    history: false
+author:
+    - name: "Naïm Saadi"
+      email: "nsaadig16@gmail.com"
+---
+
+## Tipificar una variable
+
+Para convertir una variable aleatoria $X$ en una variable normal estándar $Z$, hay que **tipificarla**, usando la siguiente fórmula:
+
+$$
+\large Z=\frac{X-\mu}{\sigma}
+$$
+
+Donde $\mu$ es la **media** y $\sigma$ la **desviación estándar**.
+
+## Percentiles
+
+Un percentil $p_x$ es el valor que indica que la probabilidad de obtener valores menores que este es de un $x\%$.
+
+### Cuartiles
+
+Los cuartiles $Q_1$,$Q_2$ y $Q_3$ son los percentiles $p_{25}$, $p_{50}$ y $p_{75}$ respectivamente.
+
+En una distribución normal estándar:
+$$
+\begin{gather}
+Q_2=\mu\\
+Q_{1~\text{(tip.)}},Q_{~\text{(tip.)}} = -0.67,0.67
+\end{gather}
+$$
+
+## Campana de Gauss
+
+- La campana de Gauss siempre es **simétrica** por lo que dos valores a la misma distancia de la media ($\mu$) siempre tendran la misma probabilidad.
+
+- En distribución normal medimos valores contínuos, así que la probabilidad de que un valor dé *exactamente* un número (valor discreto), es siempre 0.
+
+- Siempre se cumple la propiedad siguiente:
+
+$$
+P(Z < -X) = P(Z > X)
+$$
