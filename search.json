@@ -28,6 +28,41 @@
     "text": "3 Definir los puntos críticos\nPara definir de qué tipo es un punto crítico, deberemos construir la matriz Hessiana. Para eso necesitaremos las segundas derivadas parciales.\n\n3.1 Segundas derivadas parciales\nDadas las derivadas parciales \\(D_x\\) y \\(D_y\\), las segundas derivadas parciales se obtienen volviendo a derivar parcialmente cada una sobre ambas variables. Conseguiremos:\n\n\\(D_{xx}\\), resultado de derivar \\(D_x\\) sobre \\(x\\)\n\\(D_{xy}\\), resultado de derivar \\(D_x\\) sobre \\(y\\)\n\\(D_{yx}\\), resultado de derivar \\(D_y\\) sobre \\(x\\) (da el mismo resultado que la anterior)\n\\(D_{yy}\\), resultado de derivar \\(D_y\\) sobre \\(y\\)\n\nAhora montamos la matriz Hessiana (\\(H\\)) de esta forma:\n\\[\n\\large\n\\begin{pmatrix}\nD_{xx} & D_{xy} \\\\\nD_{yx} & D_{yy}\n\\end{pmatrix}\n\\]\n\n\n3.2 Definiciones a partir de la matriz Hessiana\nPara observar un punto \\((x,y)\\) hay que sustituir los valores en las derivadas parciales. Para definir qué tipo de punto crítico es, hay que observar dos valores: el determinante de la matriz Hessiana \\(|H|\\) y el elemento \\(\\large D_{xx}\\).\nEl determinante se consigue con la operación \\(|H| = D_{xx}\\cdot D_{yy} - D_{xy}\\cdot D{yx}\\).\nDados estos valores, podemos observar la siguiente tabla:\n\n\n\n\\(\\large|H|\\)\n\\(D_{xx}\\)\nTipo de punto\n\n\n\n\n\\(0\\)\n\nInconcluso\n\n\n\\(-\\)\n\nPunto de silla\n\n\n\\(+\\)\n\\(+\\)\nMínimo relativo\n\n\n\\(+\\)\n\\(-\\)\nMáximo relativo\n\n\n\\(+\\)\n\\(0\\)\nPunto de silla\n\n\n\nY observando los signos podremos saber qué tipo de punto crítico es."
   },
   {
+    "objectID": "contents/estadistica.html#qué-es-la-distribución-normal",
+    "href": "contents/estadistica.html#qué-es-la-distribución-normal",
+    "title": "Estadística (I)",
+    "section": "Qué es la distribución normal?",
+    "text": "Qué es la distribución normal?\n\nLa distribución normal es una distribución de probabilidad que describre fenómenos que suelen centrarse en un valor medio.\n\n\nCampana de Gauss"
+  },
+  {
+    "objectID": "contents/estadistica.html#conceptos",
+    "href": "contents/estadistica.html#conceptos",
+    "title": "Estadística (I)",
+    "section": "Conceptos",
+    "text": "Conceptos\n\n\\(\\large \\mu\\): Media poblacional, indica el centro de la distribución.\n\\(\\large \\bar{x}\\): Media muestral.\n\\(\\large \\sigma\\): Desviación estándar, indica lo ancha que es la curva (el error).\n\\(\\large \\alpha\\): Nivel de significación, indica el riesgo aceptado de equivocarse.\n\\(\\large n\\): Muestra, cantidad de información recogida."
+  },
+  {
+    "objectID": "contents/estadistica.html#intervalo-de-confianza",
+    "href": "contents/estadistica.html#intervalo-de-confianza",
+    "title": "Estadística (I)",
+    "section": "Intervalo de confianza",
+    "text": "Intervalo de confianza\n\nUn intervalo de confianza indica la seguridad que se tiene en encontrar dicho valor en ese intervalo.\nPodemos encontrar este intervalo de dos formas diferentes dependiendo de lo que dispongamos:\n\nConocemos \\(\\sigma\\) y \\(n \\geq 30\\).\nNo conocemos \\(\\sigma\\)."
+  },
+  {
+    "objectID": "contents/estadistica.html#intervalo-de-confianza-con-sigma-conocida",
+    "href": "contents/estadistica.html#intervalo-de-confianza-con-sigma-conocida",
+    "title": "Estadística (I)",
+    "section": "Intervalo de confianza con \\(\\sigma\\) conocida",
+    "text": "Intervalo de confianza con \\(\\sigma\\) conocida\nSe calcula así:\n\n\\[\nIC = \\bar{x} \\pm Z_{\\alpha / 2}\\cdot \\frac{\\sigma}{\\sqrt{n}}\n\\]\nPero qué es \\(Z_{\\alpha / 2}\\)?"
+  },
+  {
+    "objectID": "contents/estadistica.html#valor-crítico",
+    "href": "contents/estadistica.html#valor-crítico",
+    "title": "Estadística (I)",
+    "section": "Valor crítico",
+    "text": "Valor crítico\n\nLa notación \\(Z_k\\) representa el valor crítico de la distribución normal tal que el valor de \\(Z\\) deja una cola a la derecha de un \\(k\\%\\). Es decir, si tuvieramos \\(k=0.23\\), deberíamos obtener \\(1-k=1-0.23=0.67\\), y al buscarlo en la siguiente tabla nos daría el valor \\(0.44\\)."
+  },
+  {
     "objectID": "contents/analisis.html",
     "href": "contents/analisis.html",
     "title": "Análisis de funciones",
@@ -89,6 +124,13 @@
     "title": "Análisis de funciones",
     "section": "7 Derivabilidad",
     "text": "7 Derivabilidad\nPara que una función sea derivable, tiene que ser contínua. Es decir, una función derivable siempre será contínua pero una contínua no siempre será derivable.\nPara comprobar que una función \\(f(x)\\) es derivable en un punto \\(a\\) debemos comprobar que la derivada a izquierda y derecha de \\(a\\) es la misma, es decir: \\[f'_-(a)=f'_+(a)\\]\nSi son iguales, significa que \\(f(a)\\) es derivable en \\(a\\).\nEjemplo: \\[\nf(x)=\\begin{cases}\n    x^2&\\text{si }x\\leq1\\\\\n    2x-1 &\\text{si }1&lt;x\n\\end{cases}\\\\\\\\\n\\]\nEs contínua, por lo tanto puede ser derivable. Estudiamos su derivabilidad en \\(x=1\\): \\[\\begin{gathered}\nf'_-(1)=(x^2)'=2x=2\\cdot(1)=2\\\\\\\\\nf'_+(1)=(2x-1)'=2\n\\end{gathered}\n\\]\nPor lo tanto, sí es derivable.\n\n\nExtra 1: Resolver inecuaciones\nEl proceso de resolver inecuaciones es relativamente sencillo. Todo depende de qué tipo queramos resolver. Aquí se explicaran aquellas que os seran útiles.\n\nInecuaciones de primer grado\nSon inecuaciones de la forma \\(ax+b\\geq 0\\). Se resuelven de la misma manera que las ecuaciones de primer grado, con la excepción de que si multiplicamos o dividimos por un número negativo, hay que girar el signo. Ejemplo: \\[\\begin{gathered}-3x+4\\geq0\n\\\\ -3x \\geq-4\n\\\\ x\\textcolor{red}{\\leq}\\frac{-4}{-3}\n\\\\ x \\leq \\frac 4 3\n\\\\\\text{Respuesta: } (-\\infty,\\frac 4 3)\n\\end{gathered}\n\\]\n\n\nInecuaciones de segundo grado\nSon inecuaciones de la forma \\(ax^2 + bx +c \\geq 0\\). Primero calcularemos las raíces, es decir, lo resolveremos como si fuera una ecuación de segundo grado normal. Eso nos dará 2 respuestas \\(x_1\\) y \\(x_2\\). Para saber qué intervalo tomar, solo tenemos que mirar \\(a\\). Si \\(a &gt; 0\\), entonces el resultado será positivo solo fuera del intervalo \\([x_1,x_2]\\), pero si \\(a&lt;0\\), entonces el resultado solo será positivo dentro del intervalo \\([x_1,x_2]\\). En resumen, dada una \\(f(x)\\) que contiene una raíz por ejemplo: \\[\\begin{gather}\n\\text{Dom}(f(x))=\n\\begin{cases}\n(-\\infty,x_1)\\cup(x_2,+\\infty)&\\text{si } a&gt;0\n\\\\ [x_1,x_2] & \\text{si } a&lt;0\n\\end{cases}\n\\end{gather}\n\\]\n\n\n\nExtra 2: Límites\nPara trabajar con límites, debemos tener en cuenta lo siguiente (no es algo exacto, ya que lo tomamos como referencia al trabajar con límites). Dados números \\(n,m\\in\\mathbb{R}\\):\n\n\\(\\large\\infty + n = \\infty\\)\n\\(\\large \\infty^n + \\infty^m = \\infty^{max(n,m)}\\)\n\\(n &lt; \\log \\infty &lt; \\sqrt \\infty &lt; \\infty &lt; \\infty^n &lt; n^{\\infty}\\)\n\\(\\large\\frac 1 \\infty = 0\\)\n\\(\\large \\frac 1 0 = \\infty\\)\nEn fracciones con infinitos: \\[\\frac{n\\cdot \\infty_1}{m\\cdot\\infty_2}=\\begin{cases}\n\\infty & \\text{si }\\infty_1&gt;\\infty_2\\\\\n0&\\text{si }\\infty_2&gt;\\infty_1\\\\\n\\frac n m & \\text{si }\\infty_1 = \\infty_2\n\\end{cases}\n\\]\n\n\n\nExtra 3: L’Hôpital\nSi al hacer un límite nos surge la indeterminación \\(\\large\\frac 0 0\\), podemos aplicar la regla de l’Hôpital. Para aplicarla, hay que hacer la derivada del numerador y el denominador por separado: \\[\\large \\lim_{x\\rightarrow a}\\frac{f}{g}=\\lim_{x\\rightarrow a}\\frac{f'}{g'}\\]\nEjemplo: \\[\n\\begin{gathered}\\large\n\\lim_{x\\rightarrow-2}\\frac{x+2}{x^2+3x+2}=\\frac{-2+2}{(-2)^2+3\\cdot(-2)+2}=\\frac 0 0\\\\\\\\\\large\n\\frac{x+2}{x^2+3x+2}\\overset{\\text{l'Hôpital}}{\\Longrightarrow}\\frac{1}{2x+3}\\\\\\\\\n\\lim_{x\\rightarrow-2}\\frac{1}{2x+3}=\\frac{1}{2\\cdot(-2)+3}=\\frac{1}{-4+3}=\\frac{1}{-1}=-1\n\\end{gathered}\n\\]"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cálculo GATE",
+    "section": "",
+    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\n\n\n\n\n\n\nTipImprimir las páginas a PDF\n\n\n\n\n\nPara imprimir las páginas a PDF (solo las presentaciones), sigue estos pasos:\n\nPulsa la tecla E para entrar en modo Print.\nPulsa Ctrl+P para imprimir la página a PDF.\nCambia el destino a “Imprimir PDF”.\nCambia la orientación a horizontal.\nCambia los márgenes a ninguno.\nActiva la opción Gráficos de fondo.\nPulsa “imprimir”.\n\n\n\n\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-12-02\n\n\nEstadística (II)\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-11-25\n\n\nEstadística (I)\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-11-11\n\n\nAproximación de integrales\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-23\n\n\nPuntos críticos\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contents/aproximacion_integrales.html#aproximación-de-integrales",
@@ -210,46 +252,25 @@
     "text": "Ejemplo (c)\nUsaremos cambio de variable para resolver esta integral:\n\\[\n\\begin{gather}\n\\left[\\frac{3\\cdot\\sqrt[3]{{(8-2x)}^4}}{-8}\\right]_0^1 = \\frac{3\\cdot(\\sqrt[3]{(8-2\\cdot 1)^4})}{-8} - \\frac{3\\cdot(\\sqrt[3]{(8-2\\cdot 0)^4})}{-8}\\\\\n\\frac{-3\\cdot \\sqrt[3]{6^4}}{-8}-\\frac{-3\\cdot \\sqrt[3]{8^4}}{-8} = 1.91148\\dots\\\\\n\\end{gather}\n\\]\n\nAsí que tenemos \\(\\small 1.91155\\dots\\) (fórmula de los coeficientes indeterminados), \\(\\small 1.91147\\dots\\) (regla de Simpson) y el valor exacto es \\(\\small 1.91148\\dots\\). Calculamos el error de cada uno:\n\\(\\text{error}_{\\text{f. coef. ind.}} = |1.91148\\dots - 1.91155\\dots| \\approx 0.00007\\), \\(\\text{error}_{\\text{f. Simpson}} = |1.91148\\dots -  1.91147\\dots| \\approx 0.00001\\)\nComo el error es menor, podemos concluir que la mejor aproximación es la de la regla de Simpson."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Cálculo GATE",
-    "section": "",
-    "text": "Esta página web contiene apuntes de cálculo del Grado en Arquitectura Técnica y Edificación.\n\n\n\n\n\n\nTipImprimir las páginas a PDF\n\n\n\n\n\nPara imprimir las páginas a PDF (solo las presentaciones), sigue estos pasos:\n\nPulsa la tecla E para entrar en modo Print.\nPulsa Ctrl+P para imprimir la página a PDF.\nCambia el destino a “Imprimir PDF”.\nCambia la orientación a horizontal.\nCambia los márgenes a ninguno.\nActiva la opción Gráficos de fondo.\nPulsa “imprimir”.\n\n\n\n\nTenemos las siguientes páginas:\n\n\n\n\n\n\n\n\n\n\nFecha\n\n\n\nTema\n\n\n\nAutor\n\n\n\n\n\n\n\n\n2025-11-25\n\n\nDistribución normal\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-11-11\n\n\nAproximación de integrales\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-23\n\n\nPuntos críticos\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-17\n\n\nOptimización\n\n\nNaïm Saadi\n\n\n\n\n\n\n2025-10-16\n\n\nAnálisis de funciones\n\n\nNaïm Saadi\n\n\n\n\n\n\nNo matching items"
+    "objectID": "contents/estadistica2.html#tipificar-una-variable",
+    "href": "contents/estadistica2.html#tipificar-una-variable",
+    "title": "Estadística (II)",
+    "section": "Tipificar una variable",
+    "text": "Tipificar una variable\nPara convertir una variable aleatoria \\(X\\) en una variable normal estándar \\(Z\\), hay que tipificarla, usando la siguiente fórmula:\n\\[\n\\large Z=\\frac{X-\\mu}{\\sigma}\n\\]\nDonde \\(\\mu\\) es la media y \\(\\sigma\\) la desviación estándar."
   },
   {
-    "objectID": "contents/distribucion_normal.html#qué-es-la-distribución-normal",
-    "href": "contents/distribucion_normal.html#qué-es-la-distribución-normal",
-    "title": "Distribución normal",
-    "section": "Qué es la distribución normal?",
-    "text": "Qué es la distribución normal?\n\nLa distribución normal es una distribución de probabilidad que describre fenómenos que suelen centrarse en un valor medio.\n\n\nCampana de Gauss"
+    "objectID": "contents/estadistica2.html#percentiles",
+    "href": "contents/estadistica2.html#percentiles",
+    "title": "Estadística (II)",
+    "section": "Percentiles",
+    "text": "Percentiles\nUn percentil \\(p_x\\) es el valor que indica que la probabilidad de obtener valores menores que este es de un \\(x\\%\\).\nCuartiles\nLos cuartiles \\(Q_1\\),\\(Q_2\\) y \\(Q_3\\) son los percentiles \\(p_{25}\\), \\(p_{50}\\) y \\(p_{75}\\) respectivamente.\nEn una distribución normal estándar: \\[\n\\begin{gather}\nQ_2=\\mu\\\\\nQ_{1~\\text{(tip.)}},Q_{~\\text{(tip.)}} = -0.67,0.67\n\\end{gather}\n\\]"
   },
   {
-    "objectID": "contents/distribucion_normal.html#conceptos",
-    "href": "contents/distribucion_normal.html#conceptos",
-    "title": "Distribución normal",
-    "section": "Conceptos",
-    "text": "Conceptos\n\n\\(\\large \\mu\\): Media poblacional, indica el centro de la distribución.\n\\(\\large \\bar{x}\\): Media muestral.\n\\(\\large \\sigma\\): Desviación estándar, indica lo ancha que es la curva (el error).\n\\(\\large \\alpha\\): Nivel de significación, indica el riesgo aceptado de equivocarse.\n\\(\\large n\\): Muestra, cantidad de información recogida."
-  },
-  {
-    "objectID": "contents/distribucion_normal.html#intervalo-de-confianza",
-    "href": "contents/distribucion_normal.html#intervalo-de-confianza",
-    "title": "Distribución normal",
-    "section": "Intervalo de confianza",
-    "text": "Intervalo de confianza\n\nUn intervalo de confianza indica la seguridad que se tiene en encontrar dicho valor en ese intervalo.\nPodemos encontrar este intervalo de dos formas diferentes dependiendo de lo que dispongamos:\n\nConocemos \\(\\sigma\\) y \\(n \\geq 30\\).\nNo conocemos \\(\\sigma\\)."
-  },
-  {
-    "objectID": "contents/distribucion_normal.html#intervalo-de-confianza-con-sigma-conocida",
-    "href": "contents/distribucion_normal.html#intervalo-de-confianza-con-sigma-conocida",
-    "title": "Distribución normal",
-    "section": "Intervalo de confianza con \\(\\sigma\\) conocida",
-    "text": "Intervalo de confianza con \\(\\sigma\\) conocida\nSe calcula así:\n\n\\[\nIC = \\bar{x} \\pm Z_{\\alpha / 2}\\cdot \\frac{\\sigma}{\\sqrt{n}}\n\\]\nPero qué es \\(Z_{\\alpha / 2}\\)?"
-  },
-  {
-    "objectID": "contents/distribucion_normal.html#valor-crítico",
-    "href": "contents/distribucion_normal.html#valor-crítico",
-    "title": "Distribución normal",
-    "section": "Valor crítico",
-    "text": "Valor crítico\n\nLa notación \\(Z_k\\) representa el valor crítico de la distribución normal tal que el valor de \\(Z\\) deja una cola a la derecha de un \\(k\\%\\). Es decir, si tuvieramos \\(k=0.23\\), deberíamos obtener \\(1-k=1-0.23=0.67\\), y al buscarlo en la siguiente tabla nos daría el valor \\(0.44\\)."
+    "objectID": "contents/estadistica2.html#campana-de-gauss",
+    "href": "contents/estadistica2.html#campana-de-gauss",
+    "title": "Estadística (II)",
+    "section": "Campana de Gauss",
+    "text": "Campana de Gauss\n\nLa campana de Gauss siempre es simétrica por lo que dos valores a la misma distancia de la media (\\(\\mu\\)) siempre tendran la misma probabilidad.\nEn distribución normal medimos valores contínuos, así que la probabilidad de que un valor dé exactamente un número (valor discreto), es siempre 0.\nSiempre se cumple la propiedad siguiente:\n\n\\[\nP(Z &lt; -X) = P(Z &gt; X)\n\\]"
   },
   {
     "objectID": "contents/optimizacion.html#elementos-de-un-problema",

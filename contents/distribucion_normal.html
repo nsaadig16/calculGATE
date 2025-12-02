@@ -12,7 +12,7 @@
 
   <meta name="author" content="Naïm Saadi">
   <meta name="dcterms.date" content="2025-11-25">
-  <title>CálculoGATE – Distribución normal</title>
+  <title>CálculoGATE – Distribución normal (I)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -129,7 +129,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Distribución normal</h1>
+  <h1 class="title">Distribución normal (I)</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -484,7 +484,7 @@ IC = \bar{x} \pm Z_{\alpha / 2}\cdot \frac{\sigma}{\sqrt{n}}
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/nsaadig16\.github\.io\/calculGATE\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
